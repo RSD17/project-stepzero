@@ -37,7 +37,6 @@ in theory, produce them someday.
 - [Architecture](#architecture)
 - [Features](#features)
 - [Current Project Status](#current-project-status)
-- [Current Limitations](#current-limitations)
 - [Folder Structure](#folder-structure)
 - [Installation](#installation)
 - [Quick Start](#quick-start)
@@ -286,59 +285,12 @@ hands-on experimentation. See [CLI Commands](#cli-commands).
 
 ## Current Project Status
 
-- [x] Data validation and schema layer
-- [x] Graph construction and merging across multiple interconnected subject files
-- [x] Core graph algorithms (cycle detection, BFS, DFS, topological sort)
-- [x] Analytics and publication-quality visualization
-- [x] Weighted scoring framework with multiple configurable profiles
-- [x] Graph-agnostic student model
-- [x] Recommendation engine with explainable heuristics
-- [x] Deterministic learning simulator with three learner archetypes
-- [x] Quantitative evaluation and cross-experiment comparison framework
-- [x] Five interconnected subject datasets (94 concepts total)
-- [ ] Adaptive learning engine (learned weights and mastery parameters)
-- [ ] Interactive dashboard
-- [ ] Formal empirical research phase with real learners
-- [ ] Full syllabus expansion beyond proof-of-concept scale
-
 The system, as it stands, is a complete and internally validated
 computational pipeline: every checked item above has been built, tested
 against real generated data, and in several cases has already surfaced
 genuine findings (see [Example Outputs](#example-outputs)). The unchecked
 items are the natural next phase, not missing pieces the current system
 depends on.
-
-## Current Limitations
-
-Project Step Zero is, deliberately, a computational framework first and
-an empirically validated learning theory second. Several core assumptions
-are currently hand-authored or simplified placeholders rather than
-conclusions drawn from real student data, and are worth stating plainly:
-
-- Difficulty ratings and estimated study hours for every concept are
-  hand-authored judgment calls, not measurements taken from real
-  learners.
-- The three weighting profiles (balanced, fast track, thorough) reflect
-  reasonable, defensible educational philosophies chosen by hand, not
-  weights learned or validated against real outcomes.
-- The three learner archetypes (average, fast, struggling) are
-  simplified formulas standing in for real learner behavior, useful for
-  testing the system's mechanics, not a substitute for how actual
-  students perform.
-- The mastery smoothing constant and mastery threshold are placeholder
-  values chosen for reasonable behavior, not fitted to any real
-  assessment data.
-- The current subject datasets are intentionally small, proof-of-concept
-  curricula (14 to 35 concepts each), not exhaustive syllabi.
-
-None of this weakens what the system has already demonstrated
-structurally. Curriculum ordering flexibility, bottleneck identification,
-and cross-subject interconnection are all real, verifiable graph-theoretic
-facts, independent of how any of the above assumptions are eventually
-tuned. But turning this from a working computational framework into a
-validated educational tool requires an empirical research phase, testing
-these assumptions against real learners, and that is explicitly the next
-major phase of this project, not an afterthought.
 
 ## Folder Structure
 
