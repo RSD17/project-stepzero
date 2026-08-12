@@ -1,0 +1,334 @@
+{
+  "schema_version": "1.0",
+  "subject": "physics",
+  "concepts": [
+    {
+      "id": "physics.mechanics.kinematics",
+      "name": "Kinematics",
+      "subject": "physics",
+      "category": "mechanics",
+      "description": "The description of motion in terms of position, velocity, and acceleration.",
+      "difficulty": 2,
+      "estimated_study_hours": 4,
+      "educational_level": "foundational",
+      "tags": [
+        "mechanics",
+        "core"
+      ],
+      "learning_objectives": [
+        "Derive and apply the equations of motion for constant acceleration."
+      ],
+      "importance": 0.9
+    },
+    {
+      "id": "physics.mechanics.newtons_laws",
+      "name": "Newton's Laws of Motion",
+      "subject": "physics",
+      "category": "mechanics",
+      "description": "The three laws relating force, mass, and acceleration.",
+      "difficulty": 3,
+      "estimated_study_hours": 5,
+      "educational_level": "foundational",
+      "tags": [
+        "mechanics",
+        "core"
+      ],
+      "learning_objectives": [
+        "Apply Newton's three laws to analyze forces on simple systems."
+      ],
+      "importance": 0.95
+    },
+    {
+      "id": "physics.mechanics.work_energy",
+      "name": "Work and Energy",
+      "subject": "physics",
+      "category": "mechanics",
+      "description": "Work, kinetic energy, potential energy, and conservation of energy.",
+      "difficulty": 3,
+      "estimated_study_hours": 5,
+      "educational_level": "intermediate",
+      "tags": [
+        "mechanics",
+        "energy"
+      ],
+      "learning_objectives": [
+        "Apply the work-energy theorem and conservation of energy to solve problems."
+      ]
+    },
+    {
+      "id": "physics.mechanics.momentum",
+      "name": "Momentum and Collisions",
+      "subject": "physics",
+      "category": "mechanics",
+      "description": "Linear momentum, impulse, and conservation of momentum in collisions.",
+      "difficulty": 3,
+      "estimated_study_hours": 4,
+      "educational_level": "intermediate",
+      "tags": [
+        "mechanics"
+      ],
+      "learning_objectives": [
+        "Apply conservation of momentum to elastic and inelastic collisions."
+      ]
+    },
+    {
+      "id": "physics.mechanics.rotational_motion",
+      "name": "Rotational Motion",
+      "subject": "physics",
+      "category": "mechanics",
+      "description": "Angular velocity, torque, and rotational analogs of linear motion.",
+      "difficulty": 4,
+      "estimated_study_hours": 6,
+      "educational_level": "intermediate",
+      "tags": [
+        "mechanics"
+      ],
+      "learning_objectives": [
+        "Apply torque and angular momentum concepts to rotating rigid bodies."
+      ]
+    },
+    {
+      "id": "physics.mechanics.orbital_mechanics",
+      "name": "Orbital Mechanics",
+      "subject": "physics",
+      "category": "mechanics",
+      "description": "Gravitational orbits, Kepler's laws, and satellite motion.",
+      "difficulty": 4,
+      "estimated_study_hours": 6,
+      "educational_level": "advanced",
+      "tags": [
+        "mechanics",
+        "gravitation"
+      ],
+      "learning_objectives": [
+        "Derive orbital parameters from gravitational force and Kepler's laws."
+      ]
+    },
+    {
+      "id": "physics.waves.oscillations_waves",
+      "name": "Oscillations and Waves",
+      "subject": "physics",
+      "category": "waves",
+      "description": "Simple harmonic motion and the basic properties of mechanical waves.",
+      "difficulty": 3,
+      "estimated_study_hours": 5,
+      "educational_level": "intermediate",
+      "tags": [
+        "waves"
+      ],
+      "learning_objectives": [
+        "Model simple harmonic motion and describe basic wave properties."
+      ]
+    },
+    {
+      "id": "physics.waves.optics",
+      "name": "Optics",
+      "subject": "physics",
+      "category": "waves",
+      "description": "Reflection, refraction, and basic wave behavior of light.",
+      "difficulty": 3,
+      "estimated_study_hours": 5,
+      "educational_level": "intermediate",
+      "tags": [
+        "waves",
+        "optics"
+      ],
+      "learning_objectives": [
+        "Apply the laws of reflection and refraction to simple optical systems."
+      ]
+    },
+    {
+      "id": "physics.thermodynamics.thermodynamics_basics",
+      "name": "Thermodynamics Basics",
+      "subject": "physics",
+      "category": "thermodynamics",
+      "description": "Temperature, heat, and the first and second laws of thermodynamics.",
+      "difficulty": 3,
+      "estimated_study_hours": 5,
+      "educational_level": "intermediate",
+      "tags": [
+        "thermodynamics"
+      ],
+      "learning_objectives": [
+        "Apply the first law of thermodynamics to simple thermal systems."
+      ]
+    },
+    {
+      "id": "physics.thermodynamics.statistical_mechanics_intro",
+      "name": "Introduction to Statistical Mechanics",
+      "subject": "physics",
+      "category": "thermodynamics",
+      "description": "Connecting microscopic particle behavior to macroscopic thermodynamic quantities.",
+      "difficulty": 5,
+      "estimated_study_hours": 7,
+      "educational_level": "advanced",
+      "tags": [
+        "thermodynamics",
+        "statistics"
+      ],
+      "learning_objectives": [
+        "Relate probability distributions of microstates to macroscopic temperature and entropy."
+      ]
+    },
+    {
+      "id": "physics.electromagnetism.electrostatics",
+      "name": "Electrostatics",
+      "subject": "physics",
+      "category": "electromagnetism",
+      "description": "Electric charge, electric fields, and Coulomb's law.",
+      "difficulty": 3,
+      "estimated_study_hours": 5,
+      "educational_level": "intermediate",
+      "tags": [
+        "electromagnetism"
+      ],
+      "learning_objectives": [
+        "Apply Coulomb's law and the concept of electric field to point charges."
+      ]
+    },
+    {
+      "id": "physics.electromagnetism.circuits",
+      "name": "Electric Circuits",
+      "subject": "physics",
+      "category": "electromagnetism",
+      "description": "Current, voltage, resistance, and basic circuit analysis.",
+      "difficulty": 3,
+      "estimated_study_hours": 5,
+      "educational_level": "intermediate",
+      "tags": [
+        "electromagnetism"
+      ],
+      "learning_objectives": [
+        "Analyze simple series and parallel resistive circuits."
+      ]
+    },
+    {
+      "id": "physics.electromagnetism.electromagnetic_induction",
+      "name": "Electromagnetic Induction",
+      "subject": "physics",
+      "category": "electromagnetism",
+      "description": "Faraday's law and the generation of electric current from changing magnetic fields.",
+      "difficulty": 4,
+      "estimated_study_hours": 6,
+      "educational_level": "advanced",
+      "tags": [
+        "electromagnetism"
+      ],
+      "learning_objectives": [
+        "Apply Faraday's law to calculate induced EMF in changing magnetic fields."
+      ]
+    },
+    {
+      "id": "physics.modern_physics.special_relativity",
+      "name": "Special Relativity",
+      "subject": "physics",
+      "category": "modern_physics",
+      "description": "Time dilation, length contraction, and the postulates of special relativity.",
+      "difficulty": 4,
+      "estimated_study_hours": 6,
+      "educational_level": "advanced",
+      "tags": [
+        "modern_physics"
+      ],
+      "learning_objectives": [
+        "Apply the postulates of special relativity to compute time dilation and length contraction."
+      ]
+    },
+    {
+      "id": "physics.modern_physics.quantum_mechanics_intro",
+      "name": "Introduction to Quantum Mechanics",
+      "subject": "physics",
+      "category": "modern_physics",
+      "description": "Wave-particle duality, the Schrodinger equation, and quantization of observables.",
+      "difficulty": 5,
+      "estimated_study_hours": 8,
+      "educational_level": "advanced",
+      "tags": [
+        "modern_physics",
+        "quantum"
+      ],
+      "learning_objectives": [
+        "Interpret the wavefunction and apply the Schrodinger equation to simple systems."
+      ],
+      "importance": 0.9
+    }
+  ],
+  "edges": [
+    {
+      "source": "physics.mechanics.kinematics",
+      "target": "physics.mechanics.newtons_laws"
+    },
+    {
+      "source": "physics.mechanics.newtons_laws",
+      "target": "physics.mechanics.work_energy"
+    },
+    {
+      "source": "physics.mechanics.newtons_laws",
+      "target": "physics.mechanics.momentum"
+    },
+    {
+      "source": "physics.mechanics.newtons_laws",
+      "target": "physics.mechanics.rotational_motion"
+    },
+    {
+      "source": "physics.mechanics.newtons_laws",
+      "target": "physics.mechanics.orbital_mechanics"
+    },
+    {
+      "source": "physics.mechanics.newtons_laws",
+      "target": "physics.waves.oscillations_waves"
+    },
+    {
+      "source": "physics.waves.oscillations_waves",
+      "target": "physics.waves.optics"
+    },
+    {
+      "source": "physics.mechanics.work_energy",
+      "target": "physics.thermodynamics.thermodynamics_basics"
+    },
+    {
+      "source": "physics.thermodynamics.thermodynamics_basics",
+      "target": "physics.thermodynamics.statistical_mechanics_intro"
+    },
+    {
+      "source": "physics.electromagnetism.electrostatics",
+      "target": "physics.electromagnetism.circuits"
+    },
+    {
+      "source": "physics.electromagnetism.circuits",
+      "target": "physics.electromagnetism.electromagnetic_induction"
+    },
+    {
+      "source": "physics.mechanics.kinematics",
+      "target": "physics.modern_physics.special_relativity"
+    },
+    {
+      "source": "physics.waves.optics",
+      "target": "physics.modern_physics.quantum_mechanics_intro"
+    },
+    {
+      "source": "mathematics.calculus.derivatives",
+      "target": "physics.mechanics.kinematics"
+    },
+    {
+      "source": "mathematics.linear_algebra.vectors",
+      "target": "physics.mechanics.rotational_motion"
+    },
+    {
+      "source": "mathematics.calculus.differential_equations_intro",
+      "target": "physics.mechanics.orbital_mechanics"
+    },
+    {
+      "source": "mathematics.statistics.probability_basics",
+      "target": "physics.thermodynamics.statistical_mechanics_intro"
+    },
+    {
+      "source": "mathematics.precalculus.complex_numbers",
+      "target": "physics.modern_physics.quantum_mechanics_intro"
+    },
+    {
+      "source": "mathematics.linear_algebra.eigenvalues_eigenvectors",
+      "target": "physics.modern_physics.quantum_mechanics_intro"
+    }
+  ]
+}

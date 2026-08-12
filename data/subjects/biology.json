@@ -1,0 +1,307 @@
+{
+  "schema_version": "1.0",
+  "subject": "biology",
+  "concepts": [
+    {
+      "id": "biology.cellular.cell_structure",
+      "name": "Cell Structure",
+      "subject": "biology",
+      "category": "cellular",
+      "description": "The organelles and structures of prokaryotic and eukaryotic cells.",
+      "difficulty": 1,
+      "estimated_study_hours": 4,
+      "educational_level": "foundational",
+      "tags": [
+        "cellular",
+        "core"
+      ],
+      "learning_objectives": [
+        "Identify the major organelles of a eukaryotic cell and describe their functions."
+      ],
+      "importance": 0.9
+    },
+    {
+      "id": "biology.cellular.membrane_transport",
+      "name": "Membrane Transport",
+      "subject": "biology",
+      "category": "cellular",
+      "description": "Passive and active transport of substances across the cell membrane.",
+      "difficulty": 2,
+      "estimated_study_hours": 4,
+      "educational_level": "foundational",
+      "tags": [
+        "cellular"
+      ],
+      "learning_objectives": [
+        "Distinguish between passive and active transport mechanisms."
+      ]
+    },
+    {
+      "id": "biology.biochemistry.biomolecules",
+      "name": "Biomolecules",
+      "subject": "biology",
+      "category": "biochemistry",
+      "description": "The structure and function of carbohydrates, lipids, proteins, and nucleic acids.",
+      "difficulty": 3,
+      "estimated_study_hours": 5,
+      "educational_level": "foundational",
+      "tags": [
+        "biochemistry",
+        "core"
+      ],
+      "learning_objectives": [
+        "Relate the structure of each major biomolecule class to its biological function."
+      ]
+    },
+    {
+      "id": "biology.cellular.cellular_respiration",
+      "name": "Cellular Respiration",
+      "subject": "biology",
+      "category": "cellular",
+      "description": "How cells convert glucose into usable chemical energy (ATP).",
+      "difficulty": 3,
+      "estimated_study_hours": 6,
+      "educational_level": "intermediate",
+      "tags": [
+        "cellular",
+        "energy"
+      ],
+      "learning_objectives": [
+        "Trace the flow of electrons and energy through cellular respiration."
+      ]
+    },
+    {
+      "id": "biology.cellular.photosynthesis",
+      "name": "Photosynthesis",
+      "subject": "biology",
+      "category": "cellular",
+      "description": "How plants convert light energy into chemical energy.",
+      "difficulty": 3,
+      "estimated_study_hours": 6,
+      "educational_level": "intermediate",
+      "tags": [
+        "cellular",
+        "energy"
+      ],
+      "learning_objectives": [
+        "Describe the light-dependent and light-independent reactions of photosynthesis."
+      ]
+    },
+    {
+      "id": "biology.genetics.dna_structure",
+      "name": "DNA Structure",
+      "subject": "biology",
+      "category": "genetics",
+      "description": "The double helix structure of DNA and its role as genetic material.",
+      "difficulty": 2,
+      "estimated_study_hours": 4,
+      "educational_level": "foundational",
+      "tags": [
+        "genetics",
+        "core"
+      ],
+      "learning_objectives": [
+        "Describe the structure of DNA and explain how it encodes genetic information."
+      ]
+    },
+    {
+      "id": "biology.genetics.dna_replication",
+      "name": "DNA Replication",
+      "subject": "biology",
+      "category": "genetics",
+      "description": "How DNA is copied prior to cell division.",
+      "difficulty": 3,
+      "estimated_study_hours": 5,
+      "educational_level": "intermediate",
+      "tags": [
+        "genetics"
+      ],
+      "learning_objectives": [
+        "Describe the semiconservative mechanism of DNA replication."
+      ]
+    },
+    {
+      "id": "biology.genetics.gene_expression",
+      "name": "Gene Expression",
+      "subject": "biology",
+      "category": "genetics",
+      "description": "Transcription and translation, the process of turning genes into proteins.",
+      "difficulty": 4,
+      "estimated_study_hours": 6,
+      "educational_level": "advanced",
+      "tags": [
+        "genetics"
+      ],
+      "learning_objectives": [
+        "Trace the flow of genetic information from DNA through mRNA to protein."
+      ]
+    },
+    {
+      "id": "biology.genetics.mendelian_genetics",
+      "name": "Mendelian Genetics",
+      "subject": "biology",
+      "category": "genetics",
+      "description": "Patterns of inheritance discovered by Gregor Mendel.",
+      "difficulty": 2,
+      "estimated_study_hours": 4,
+      "educational_level": "foundational",
+      "tags": [
+        "genetics"
+      ],
+      "learning_objectives": [
+        "Apply Punnett squares to predict inheritance patterns for simple traits."
+      ]
+    },
+    {
+      "id": "biology.genetics.population_genetics",
+      "name": "Population Genetics",
+      "subject": "biology",
+      "category": "genetics",
+      "description": "How allele frequencies change in populations over time.",
+      "difficulty": 4,
+      "estimated_study_hours": 6,
+      "educational_level": "advanced",
+      "tags": [
+        "genetics",
+        "statistics"
+      ],
+      "learning_objectives": [
+        "Apply the Hardy-Weinberg principle to compute allele and genotype frequencies."
+      ]
+    },
+    {
+      "id": "biology.evolution.natural_selection",
+      "name": "Natural Selection",
+      "subject": "biology",
+      "category": "evolution",
+      "description": "The mechanism by which populations evolve over generations.",
+      "difficulty": 3,
+      "estimated_study_hours": 5,
+      "educational_level": "intermediate",
+      "tags": [
+        "evolution"
+      ],
+      "learning_objectives": [
+        "Explain how natural selection acts on heritable variation within a population."
+      ]
+    },
+    {
+      "id": "biology.physiology.homeostasis",
+      "name": "Homeostasis",
+      "subject": "biology",
+      "category": "physiology",
+      "description": "How organisms maintain a stable internal environment.",
+      "difficulty": 2,
+      "estimated_study_hours": 4,
+      "educational_level": "foundational",
+      "tags": [
+        "physiology"
+      ],
+      "learning_objectives": [
+        "Describe feedback mechanisms that maintain physiological homeostasis."
+      ]
+    },
+    {
+      "id": "biology.physiology.human_physiology_intro",
+      "name": "Introduction to Human Physiology",
+      "subject": "biology",
+      "category": "physiology",
+      "description": "An overview of the major organ systems and how they interact.",
+      "difficulty": 3,
+      "estimated_study_hours": 6,
+      "educational_level": "intermediate",
+      "tags": [
+        "physiology"
+      ],
+      "learning_objectives": [
+        "Describe how the major organ systems work together to maintain body function."
+      ]
+    },
+    {
+      "id": "biology.ecology.ecology_basics",
+      "name": "Ecology Basics",
+      "subject": "biology",
+      "category": "ecology",
+      "description": "Populations, communities, and energy flow through ecosystems.",
+      "difficulty": 2,
+      "estimated_study_hours": 5,
+      "educational_level": "foundational",
+      "tags": [
+        "ecology"
+      ],
+      "learning_objectives": [
+        "Describe energy flow and nutrient cycling within an ecosystem."
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "biology.cellular.cell_structure",
+      "target": "biology.cellular.membrane_transport"
+    },
+    {
+      "source": "biology.cellular.cell_structure",
+      "target": "biology.biochemistry.biomolecules"
+    },
+    {
+      "source": "biology.biochemistry.biomolecules",
+      "target": "biology.cellular.cellular_respiration"
+    },
+    {
+      "source": "biology.cellular.cellular_respiration",
+      "target": "biology.cellular.photosynthesis"
+    },
+    {
+      "source": "biology.biochemistry.biomolecules",
+      "target": "biology.genetics.dna_structure"
+    },
+    {
+      "source": "biology.genetics.dna_structure",
+      "target": "biology.genetics.dna_replication"
+    },
+    {
+      "source": "biology.genetics.dna_replication",
+      "target": "biology.genetics.gene_expression"
+    },
+    {
+      "source": "biology.genetics.dna_structure",
+      "target": "biology.genetics.mendelian_genetics"
+    },
+    {
+      "source": "biology.genetics.mendelian_genetics",
+      "target": "biology.genetics.population_genetics"
+    },
+    {
+      "source": "biology.genetics.population_genetics",
+      "target": "biology.evolution.natural_selection"
+    },
+    {
+      "source": "biology.cellular.membrane_transport",
+      "target": "biology.physiology.homeostasis"
+    },
+    {
+      "source": "biology.physiology.homeostasis",
+      "target": "biology.physiology.human_physiology_intro"
+    },
+    {
+      "source": "biology.cellular.cellular_respiration",
+      "target": "biology.physiology.human_physiology_intro"
+    },
+    {
+      "source": "biology.evolution.natural_selection",
+      "target": "biology.ecology.ecology_basics"
+    },
+    {
+      "source": "chemistry.bonding.chemical_bonding",
+      "target": "biology.biochemistry.biomolecules"
+    },
+    {
+      "source": "chemistry.redox.redox_reactions",
+      "target": "biology.cellular.cellular_respiration"
+    },
+    {
+      "source": "mathematics.statistics.probability_basics",
+      "target": "biology.genetics.population_genetics"
+    }
+  ]
+}

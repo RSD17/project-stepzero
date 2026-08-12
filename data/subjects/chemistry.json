@@ -1,0 +1,306 @@
+{
+  "schema_version": "1.0",
+  "subject": "chemistry",
+  "concepts": [
+    {
+      "id": "chemistry.atomic_structure.atomic_theory",
+      "name": "Atomic Theory",
+      "subject": "chemistry",
+      "category": "atomic_structure",
+      "description": "The structure of the atom: protons, neutrons, electrons, and atomic models.",
+      "difficulty": 2,
+      "estimated_study_hours": 4,
+      "educational_level": "foundational",
+      "tags": [
+        "atomic_structure",
+        "core"
+      ],
+      "learning_objectives": [
+        "Describe atomic structure and predict basic properties from atomic number."
+      ],
+      "importance": 0.9
+    },
+    {
+      "id": "chemistry.atomic_structure.periodic_trends",
+      "name": "Periodic Trends",
+      "subject": "chemistry",
+      "category": "atomic_structure",
+      "description": "Trends in atomic radius, electronegativity, and ionization energy across the periodic table.",
+      "difficulty": 2,
+      "estimated_study_hours": 4,
+      "educational_level": "foundational",
+      "tags": [
+        "atomic_structure"
+      ],
+      "learning_objectives": [
+        "Predict periodic trends in atomic properties from an element's position on the table."
+      ]
+    },
+    {
+      "id": "chemistry.bonding.chemical_bonding",
+      "name": "Chemical Bonding",
+      "subject": "chemistry",
+      "category": "bonding",
+      "description": "Ionic, covalent, and metallic bonding, and molecular geometry.",
+      "difficulty": 3,
+      "estimated_study_hours": 5,
+      "educational_level": "foundational",
+      "tags": [
+        "bonding",
+        "core"
+      ],
+      "learning_objectives": [
+        "Predict bond type and basic molecular geometry from electronegativity differences."
+      ],
+      "importance": 0.85
+    },
+    {
+      "id": "chemistry.stoichiometry.moles_stoichiometry",
+      "name": "Moles and Stoichiometry",
+      "subject": "chemistry",
+      "category": "stoichiometry",
+      "description": "The mole concept and quantitative relationships in chemical reactions.",
+      "difficulty": 3,
+      "estimated_study_hours": 5,
+      "educational_level": "foundational",
+      "tags": [
+        "stoichiometry",
+        "core"
+      ],
+      "learning_objectives": [
+        "Perform stoichiometric calculations to relate reactant and product quantities."
+      ]
+    },
+    {
+      "id": "chemistry.states_of_matter.gas_laws",
+      "name": "Gas Laws",
+      "subject": "chemistry",
+      "category": "states_of_matter",
+      "description": "The ideal gas law and the relationships between pressure, volume, and temperature.",
+      "difficulty": 3,
+      "estimated_study_hours": 5,
+      "educational_level": "intermediate",
+      "tags": [
+        "states_of_matter"
+      ],
+      "learning_objectives": [
+        "Apply the ideal gas law to relate pressure, volume, temperature, and moles of gas."
+      ]
+    },
+    {
+      "id": "chemistry.thermochemistry.thermochemistry",
+      "name": "Thermochemistry",
+      "subject": "chemistry",
+      "category": "thermochemistry",
+      "description": "Energy changes in chemical reactions and Hess's law.",
+      "difficulty": 3,
+      "estimated_study_hours": 5,
+      "educational_level": "intermediate",
+      "tags": [
+        "thermochemistry"
+      ],
+      "learning_objectives": [
+        "Apply Hess's law to calculate enthalpy changes for chemical reactions."
+      ]
+    },
+    {
+      "id": "chemistry.kinetics.reaction_kinetics",
+      "name": "Reaction Kinetics",
+      "subject": "chemistry",
+      "category": "kinetics",
+      "description": "Reaction rates, rate laws, and the factors that influence reaction speed.",
+      "difficulty": 4,
+      "estimated_study_hours": 6,
+      "educational_level": "advanced",
+      "tags": [
+        "kinetics"
+      ],
+      "learning_objectives": [
+        "Derive a rate law from experimental concentration-time data."
+      ]
+    },
+    {
+      "id": "chemistry.equilibrium.chemical_equilibrium",
+      "name": "Chemical Equilibrium",
+      "subject": "chemistry",
+      "category": "equilibrium",
+      "description": "Dynamic equilibrium, the equilibrium constant, and Le Chatelier's principle.",
+      "difficulty": 4,
+      "estimated_study_hours": 6,
+      "educational_level": "advanced",
+      "tags": [
+        "equilibrium"
+      ],
+      "learning_objectives": [
+        "Apply Le Chatelier's principle to predict the effect of a disturbance on equilibrium."
+      ]
+    },
+    {
+      "id": "chemistry.acids_bases.acids_and_bases",
+      "name": "Acids and Bases",
+      "subject": "chemistry",
+      "category": "acids_bases",
+      "description": "Bronsted-Lowry and Lewis definitions of acids and bases, and pH.",
+      "difficulty": 3,
+      "estimated_study_hours": 5,
+      "educational_level": "intermediate",
+      "tags": [
+        "acids_bases"
+      ],
+      "learning_objectives": [
+        "Classify substances as acids or bases and relate pH to hydrogen ion concentration."
+      ]
+    },
+    {
+      "id": "chemistry.acids_bases.ph_and_buffers",
+      "name": "pH and Buffer Systems",
+      "subject": "chemistry",
+      "category": "acids_bases",
+      "description": "How buffer solutions resist changes in pH.",
+      "difficulty": 4,
+      "estimated_study_hours": 5,
+      "educational_level": "advanced",
+      "tags": [
+        "acids_bases"
+      ],
+      "learning_objectives": [
+        "Calculate the pH of a buffer solution using the Henderson-Hasselbalch equation."
+      ]
+    },
+    {
+      "id": "chemistry.redox.redox_reactions",
+      "name": "Redox Reactions",
+      "subject": "chemistry",
+      "category": "redox",
+      "description": "Oxidation states, and electron transfer in oxidation-reduction reactions.",
+      "difficulty": 3,
+      "estimated_study_hours": 5,
+      "educational_level": "intermediate",
+      "tags": [
+        "redox",
+        "core"
+      ],
+      "learning_objectives": [
+        "Balance redox reactions and identify oxidizing and reducing agents."
+      ]
+    },
+    {
+      "id": "chemistry.electrochemistry.electrochemistry",
+      "name": "Electrochemistry",
+      "subject": "chemistry",
+      "category": "electrochemistry",
+      "description": "Galvanic cells, electrolysis, and the relationship between chemical and electrical energy.",
+      "difficulty": 4,
+      "estimated_study_hours": 6,
+      "educational_level": "advanced",
+      "tags": [
+        "electrochemistry"
+      ],
+      "learning_objectives": [
+        "Calculate cell potentials for galvanic cells from standard reduction potentials."
+      ]
+    },
+    {
+      "id": "chemistry.organic.organic_chemistry_intro",
+      "name": "Introduction to Organic Chemistry",
+      "subject": "chemistry",
+      "category": "organic",
+      "description": "The structure and naming of basic hydrocarbon compounds.",
+      "difficulty": 3,
+      "estimated_study_hours": 6,
+      "educational_level": "intermediate",
+      "tags": [
+        "organic"
+      ],
+      "learning_objectives": [
+        "Name and draw structures for simple hydrocarbon compounds."
+      ]
+    },
+    {
+      "id": "chemistry.organic.functional_groups",
+      "name": "Functional Groups",
+      "subject": "chemistry",
+      "category": "organic",
+      "description": "Common functional groups and how they determine molecular reactivity.",
+      "difficulty": 3,
+      "estimated_study_hours": 5,
+      "educational_level": "intermediate",
+      "tags": [
+        "organic"
+      ],
+      "learning_objectives": [
+        "Identify common functional groups and predict their general reactivity."
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "chemistry.atomic_structure.atomic_theory",
+      "target": "chemistry.atomic_structure.periodic_trends"
+    },
+    {
+      "source": "chemistry.atomic_structure.periodic_trends",
+      "target": "chemistry.bonding.chemical_bonding"
+    },
+    {
+      "source": "chemistry.atomic_structure.atomic_theory",
+      "target": "chemistry.stoichiometry.moles_stoichiometry"
+    },
+    {
+      "source": "chemistry.stoichiometry.moles_stoichiometry",
+      "target": "chemistry.states_of_matter.gas_laws"
+    },
+    {
+      "source": "chemistry.stoichiometry.moles_stoichiometry",
+      "target": "chemistry.thermochemistry.thermochemistry"
+    },
+    {
+      "source": "chemistry.stoichiometry.moles_stoichiometry",
+      "target": "chemistry.kinetics.reaction_kinetics"
+    },
+    {
+      "source": "chemistry.kinetics.reaction_kinetics",
+      "target": "chemistry.equilibrium.chemical_equilibrium"
+    },
+    {
+      "source": "chemistry.bonding.chemical_bonding",
+      "target": "chemistry.acids_bases.acids_and_bases"
+    },
+    {
+      "source": "chemistry.acids_bases.acids_and_bases",
+      "target": "chemistry.acids_bases.ph_and_buffers"
+    },
+    {
+      "source": "chemistry.equilibrium.chemical_equilibrium",
+      "target": "chemistry.acids_bases.ph_and_buffers"
+    },
+    {
+      "source": "chemistry.bonding.chemical_bonding",
+      "target": "chemistry.redox.redox_reactions"
+    },
+    {
+      "source": "chemistry.redox.redox_reactions",
+      "target": "chemistry.electrochemistry.electrochemistry"
+    },
+    {
+      "source": "chemistry.bonding.chemical_bonding",
+      "target": "chemistry.organic.organic_chemistry_intro"
+    },
+    {
+      "source": "chemistry.organic.organic_chemistry_intro",
+      "target": "chemistry.organic.functional_groups"
+    },
+    {
+      "source": "physics.thermodynamics.thermodynamics_basics",
+      "target": "chemistry.thermochemistry.thermochemistry"
+    },
+    {
+      "source": "mathematics.calculus.derivatives",
+      "target": "chemistry.kinetics.reaction_kinetics"
+    },
+    {
+      "source": "physics.electromagnetism.circuits",
+      "target": "chemistry.electrochemistry.electrochemistry"
+    }
+  ]
+}

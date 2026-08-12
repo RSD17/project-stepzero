@@ -1,0 +1,372 @@
+{
+  "schema_version": "1.0",
+  "subject": "computer_science",
+  "concepts": [
+    {
+      "id": "computer_science.foundations.number_systems",
+      "name": "Number Systems",
+      "subject": "computer_science",
+      "category": "foundations",
+      "description": "Binary, decimal, and hexadecimal representations of numbers.",
+      "difficulty": 1,
+      "estimated_study_hours": 3,
+      "educational_level": "foundational",
+      "tags": [
+        "foundations",
+        "core"
+      ],
+      "learning_objectives": [
+        "Convert numbers between binary, decimal, and hexadecimal representations."
+      ],
+      "importance": 0.85
+    },
+    {
+      "id": "computer_science.foundations.boolean_logic",
+      "name": "Boolean Logic",
+      "subject": "computer_science",
+      "category": "foundations",
+      "description": "Logical operators (AND, OR, NOT) and truth tables.",
+      "difficulty": 2,
+      "estimated_study_hours": 3,
+      "educational_level": "foundational",
+      "tags": [
+        "foundations",
+        "core"
+      ],
+      "learning_objectives": [
+        "Construct and evaluate truth tables for boolean expressions."
+      ]
+    },
+    {
+      "id": "computer_science.programming.variables_and_types",
+      "name": "Variables and Data Types",
+      "subject": "computer_science",
+      "category": "programming",
+      "description": "How programs store and represent data using variables and types.",
+      "difficulty": 1,
+      "estimated_study_hours": 3,
+      "educational_level": "foundational",
+      "tags": [
+        "programming",
+        "core"
+      ],
+      "learning_objectives": [
+        "Declare variables of appropriate types for a given programming task."
+      ]
+    },
+    {
+      "id": "computer_science.programming.control_flow",
+      "name": "Control Flow",
+      "subject": "computer_science",
+      "category": "programming",
+      "description": "Conditionals and loops that determine a program's execution path.",
+      "difficulty": 2,
+      "estimated_study_hours": 4,
+      "educational_level": "foundational",
+      "tags": [
+        "programming",
+        "core"
+      ],
+      "learning_objectives": [
+        "Use conditionals and loops to control a program's execution path."
+      ]
+    },
+    {
+      "id": "computer_science.programming.functions_procedures",
+      "name": "Functions and Procedures",
+      "subject": "computer_science",
+      "category": "programming",
+      "description": "Organizing code into reusable, named blocks with inputs and outputs.",
+      "difficulty": 2,
+      "estimated_study_hours": 4,
+      "educational_level": "foundational",
+      "tags": [
+        "programming",
+        "core"
+      ],
+      "learning_objectives": [
+        "Write functions with well-defined inputs and outputs to organize code."
+      ]
+    },
+    {
+      "id": "computer_science.data_structures.arrays",
+      "name": "Arrays",
+      "subject": "computer_science",
+      "category": "data_structures",
+      "description": "Storing and accessing ordered collections of data.",
+      "difficulty": 2,
+      "estimated_study_hours": 4,
+      "educational_level": "foundational",
+      "tags": [
+        "data_structures",
+        "core"
+      ],
+      "learning_objectives": [
+        "Use arrays to store and iterate over ordered collections of data."
+      ]
+    },
+    {
+      "id": "computer_science.programming.recursion",
+      "name": "Recursion",
+      "subject": "computer_science",
+      "category": "programming",
+      "description": "Functions that solve a problem by calling themselves on smaller subproblems.",
+      "difficulty": 4,
+      "estimated_study_hours": 6,
+      "educational_level": "advanced",
+      "tags": [
+        "programming"
+      ],
+      "learning_objectives": [
+        "Write and trace recursive functions with correct base cases."
+      ]
+    },
+    {
+      "id": "computer_science.data_structures.stacks_queues",
+      "name": "Stacks and Queues",
+      "subject": "computer_science",
+      "category": "data_structures",
+      "description": "LIFO and FIFO data structures and their applications.",
+      "difficulty": 3,
+      "estimated_study_hours": 4,
+      "educational_level": "intermediate",
+      "tags": [
+        "data_structures"
+      ],
+      "learning_objectives": [
+        "Implement and apply stacks and queues to solve ordering problems."
+      ]
+    },
+    {
+      "id": "computer_science.data_structures.linked_lists",
+      "name": "Linked Lists",
+      "subject": "computer_science",
+      "category": "data_structures",
+      "description": "A linear data structure built from nodes connected by references.",
+      "difficulty": 3,
+      "estimated_study_hours": 5,
+      "educational_level": "intermediate",
+      "tags": [
+        "data_structures"
+      ],
+      "learning_objectives": [
+        "Implement basic operations (insert, delete, traverse) on a linked list."
+      ]
+    },
+    {
+      "id": "computer_science.data_structures.trees",
+      "name": "Trees",
+      "subject": "computer_science",
+      "category": "data_structures",
+      "description": "Hierarchical data structures and common tree traversal methods.",
+      "difficulty": 4,
+      "estimated_study_hours": 6,
+      "educational_level": "advanced",
+      "tags": [
+        "data_structures"
+      ],
+      "learning_objectives": [
+        "Implement tree traversal algorithms and apply them to hierarchical data."
+      ]
+    },
+    {
+      "id": "computer_science.data_structures.graphs_intro",
+      "name": "Introduction to Graphs",
+      "subject": "computer_science",
+      "category": "data_structures",
+      "description": "Representing networks of relationships as nodes and edges.",
+      "difficulty": 4,
+      "estimated_study_hours": 6,
+      "educational_level": "advanced",
+      "tags": [
+        "data_structures",
+        "graphs"
+      ],
+      "learning_objectives": [
+        "Represent a network as a graph and choose an appropriate traversal strategy."
+      ]
+    },
+    {
+      "id": "computer_science.algorithms.sorting_algorithms",
+      "name": "Sorting Algorithms",
+      "subject": "computer_science",
+      "category": "algorithms",
+      "description": "Common algorithms for ordering a collection of data.",
+      "difficulty": 3,
+      "estimated_study_hours": 5,
+      "educational_level": "intermediate",
+      "tags": [
+        "algorithms",
+        "core"
+      ],
+      "learning_objectives": [
+        "Implement and compare at least two different sorting algorithms."
+      ]
+    },
+    {
+      "id": "computer_science.algorithms.searching_algorithms",
+      "name": "Searching Algorithms",
+      "subject": "computer_science",
+      "category": "algorithms",
+      "description": "Linear and binary search strategies for locating data.",
+      "difficulty": 3,
+      "estimated_study_hours": 4,
+      "educational_level": "intermediate",
+      "tags": [
+        "algorithms"
+      ],
+      "learning_objectives": [
+        "Implement linear and binary search and identify when each is appropriate."
+      ]
+    },
+    {
+      "id": "computer_science.algorithms.complexity_analysis",
+      "name": "Complexity Analysis",
+      "subject": "computer_science",
+      "category": "algorithms",
+      "description": "Big-O notation and analyzing the efficiency of algorithms.",
+      "difficulty": 4,
+      "estimated_study_hours": 5,
+      "educational_level": "advanced",
+      "tags": [
+        "algorithms",
+        "core"
+      ],
+      "learning_objectives": [
+        "Determine the time complexity of an algorithm using Big-O notation."
+      ],
+      "importance": 0.85
+    },
+    {
+      "id": "computer_science.theory.object_oriented_programming",
+      "name": "Object-Oriented Programming",
+      "subject": "computer_science",
+      "category": "theory",
+      "description": "Organizing code around objects that bundle data and behavior.",
+      "difficulty": 3,
+      "estimated_study_hours": 6,
+      "educational_level": "intermediate",
+      "tags": [
+        "theory",
+        "programming"
+      ],
+      "learning_objectives": [
+        "Design a small program using classes, objects, and encapsulation."
+      ]
+    },
+    {
+      "id": "computer_science.theory.discrete_math_foundations",
+      "name": "Discrete Math Foundations",
+      "subject": "computer_science",
+      "category": "theory",
+      "description": "Sets, logic, and relations that underpin computer science theory.",
+      "difficulty": 3,
+      "estimated_study_hours": 5,
+      "educational_level": "intermediate",
+      "tags": [
+        "theory"
+      ],
+      "learning_objectives": [
+        "Apply set theory and logical reasoning to simple discrete math problems."
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "computer_science.foundations.number_systems",
+      "target": "computer_science.foundations.boolean_logic"
+    },
+    {
+      "source": "computer_science.foundations.number_systems",
+      "target": "computer_science.programming.variables_and_types"
+    },
+    {
+      "source": "computer_science.programming.variables_and_types",
+      "target": "computer_science.programming.control_flow"
+    },
+    {
+      "source": "computer_science.foundations.boolean_logic",
+      "target": "computer_science.programming.control_flow"
+    },
+    {
+      "source": "computer_science.programming.control_flow",
+      "target": "computer_science.programming.functions_procedures"
+    },
+    {
+      "source": "computer_science.programming.variables_and_types",
+      "target": "computer_science.data_structures.arrays"
+    },
+    {
+      "source": "computer_science.programming.functions_procedures",
+      "target": "computer_science.programming.recursion"
+    },
+    {
+      "source": "computer_science.data_structures.arrays",
+      "target": "computer_science.data_structures.stacks_queues"
+    },
+    {
+      "source": "computer_science.data_structures.arrays",
+      "target": "computer_science.data_structures.linked_lists"
+    },
+    {
+      "source": "computer_science.data_structures.linked_lists",
+      "target": "computer_science.data_structures.trees"
+    },
+    {
+      "source": "computer_science.programming.recursion",
+      "target": "computer_science.data_structures.trees"
+    },
+    {
+      "source": "computer_science.data_structures.trees",
+      "target": "computer_science.data_structures.graphs_intro"
+    },
+    {
+      "source": "computer_science.data_structures.arrays",
+      "target": "computer_science.algorithms.sorting_algorithms"
+    },
+    {
+      "source": "computer_science.programming.recursion",
+      "target": "computer_science.algorithms.sorting_algorithms"
+    },
+    {
+      "source": "computer_science.data_structures.arrays",
+      "target": "computer_science.algorithms.searching_algorithms"
+    },
+    {
+      "source": "computer_science.algorithms.sorting_algorithms",
+      "target": "computer_science.algorithms.complexity_analysis"
+    },
+    {
+      "source": "computer_science.algorithms.searching_algorithms",
+      "target": "computer_science.algorithms.complexity_analysis"
+    },
+    {
+      "source": "computer_science.programming.functions_procedures",
+      "target": "computer_science.theory.object_oriented_programming"
+    },
+    {
+      "source": "computer_science.data_structures.arrays",
+      "target": "computer_science.theory.object_oriented_programming"
+    },
+    {
+      "source": "computer_science.foundations.boolean_logic",
+      "target": "computer_science.theory.discrete_math_foundations"
+    },
+    {
+      "source": "mathematics.arithmetic.number_sense",
+      "target": "computer_science.foundations.number_systems"
+    },
+    {
+      "source": "mathematics.algebra.functions",
+      "target": "computer_science.programming.functions_procedures"
+    },
+    {
+      "source": "mathematics.algebra.functions",
+      "target": "computer_science.theory.discrete_math_foundations"
+    },
+    {
+      "source": "mathematics.precalculus.sequences_series",
+      "target": "computer_science.algorithms.complexity_analysis"
+    }
+  ]
+}

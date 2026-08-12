@@ -1,0 +1,761 @@
+{
+  "schema_version": "1.0",
+  "subject": "mathematics",
+  "concepts": [
+    {
+      "id": "mathematics.arithmetic.number_sense",
+      "name": "Number Sense",
+      "subject": "mathematics",
+      "category": "arithmetic",
+      "description": "Understanding of integers, fractions, decimals, and basic arithmetic operations.",
+      "difficulty": 1,
+      "estimated_study_hours": 2,
+      "educational_level": "foundational",
+      "tags": [
+        "arithmetic",
+        "core"
+      ],
+      "learning_objectives": [
+        "Perform and reason about basic arithmetic operations accurately."
+      ]
+    },
+    {
+      "id": "mathematics.algebra.variables_expressions",
+      "name": "Variables and Expressions",
+      "subject": "mathematics",
+      "category": "algebra",
+      "description": "Using symbols to represent unknown quantities and combining them into expressions.",
+      "difficulty": 1,
+      "estimated_study_hours": 3,
+      "educational_level": "foundational",
+      "tags": [
+        "algebra",
+        "core"
+      ],
+      "learning_objectives": [
+        "Translate word problems into algebraic expressions."
+      ]
+    },
+    {
+      "id": "mathematics.algebra.linear_equations",
+      "name": "Linear Equations",
+      "subject": "mathematics",
+      "category": "algebra",
+      "description": "Solving equations of the form ax + b = c and their graphical interpretation.",
+      "difficulty": 2,
+      "estimated_study_hours": 4,
+      "educational_level": "foundational",
+      "tags": [
+        "algebra",
+        "core"
+      ],
+      "learning_objectives": [
+        "Solve single-variable linear equations and interpret their solutions."
+      ]
+    },
+    {
+      "id": "mathematics.algebra.inequalities",
+      "name": "Inequalities",
+      "subject": "mathematics",
+      "category": "algebra",
+      "description": "Solving and graphing linear inequalities and compound inequalities.",
+      "difficulty": 2,
+      "estimated_study_hours": 3,
+      "educational_level": "foundational",
+      "tags": [
+        "algebra"
+      ],
+      "learning_objectives": [
+        "Solve and graph linear inequalities on a number line."
+      ]
+    },
+    {
+      "id": "mathematics.algebra.functions",
+      "name": "Functions",
+      "subject": "mathematics",
+      "category": "algebra",
+      "description": "The concept of a function as a mapping from inputs to outputs, including domain and range.",
+      "difficulty": 2,
+      "estimated_study_hours": 4,
+      "educational_level": "foundational",
+      "tags": [
+        "algebra",
+        "core"
+      ],
+      "learning_objectives": [
+        "Determine whether a relation is a function and identify its domain and range."
+      ],
+      "importance": 0.95
+    },
+    {
+      "id": "mathematics.algebra.systems_of_equations",
+      "name": "Systems of Equations",
+      "subject": "mathematics",
+      "category": "algebra",
+      "description": "Solving two or more linear equations simultaneously using substitution and elimination.",
+      "difficulty": 3,
+      "estimated_study_hours": 5,
+      "educational_level": "intermediate",
+      "tags": [
+        "algebra"
+      ],
+      "learning_objectives": [
+        "Solve systems of linear equations using multiple methods."
+      ]
+    },
+    {
+      "id": "mathematics.algebra.exponents_logarithms",
+      "name": "Exponents and Logarithms",
+      "subject": "mathematics",
+      "category": "algebra",
+      "description": "Rules of exponents and their inverse relationship with logarithms.",
+      "difficulty": 3,
+      "estimated_study_hours": 5,
+      "educational_level": "intermediate",
+      "tags": [
+        "algebra"
+      ],
+      "learning_objectives": [
+        "Simplify exponential expressions and solve basic logarithmic equations."
+      ]
+    },
+    {
+      "id": "mathematics.algebra.polynomials",
+      "name": "Polynomials",
+      "subject": "mathematics",
+      "category": "algebra",
+      "description": "Operations on polynomial expressions including factoring and the remainder theorem.",
+      "difficulty": 3,
+      "estimated_study_hours": 6,
+      "educational_level": "intermediate",
+      "tags": [
+        "algebra",
+        "core"
+      ],
+      "learning_objectives": [
+        "Factor polynomials and apply the remainder and factor theorems."
+      ]
+    },
+    {
+      "id": "mathematics.algebra.quadratic_equations",
+      "name": "Quadratic Equations",
+      "subject": "mathematics",
+      "category": "algebra",
+      "description": "Solving quadratic equations via factoring, completing the square, and the quadratic formula.",
+      "difficulty": 3,
+      "estimated_study_hours": 5,
+      "educational_level": "intermediate",
+      "tags": [
+        "algebra"
+      ],
+      "learning_objectives": [
+        "Solve quadratic equations using at least two distinct methods."
+      ]
+    },
+    {
+      "id": "mathematics.geometry.euclidean_basics",
+      "name": "Euclidean Geometry Basics",
+      "subject": "mathematics",
+      "category": "geometry",
+      "description": "Points, lines, angles, triangles, and basic geometric proofs.",
+      "difficulty": 1,
+      "estimated_study_hours": 4,
+      "educational_level": "foundational",
+      "tags": [
+        "geometry",
+        "core"
+      ],
+      "learning_objectives": [
+        "Apply basic geometric theorems to solve for unknown angles and lengths."
+      ]
+    },
+    {
+      "id": "mathematics.geometry.coordinate_geometry",
+      "name": "Coordinate Geometry",
+      "subject": "mathematics",
+      "category": "geometry",
+      "description": "Representing geometric objects in the Cartesian plane, distance and midpoint formulas.",
+      "difficulty": 2,
+      "estimated_study_hours": 4,
+      "educational_level": "foundational",
+      "tags": [
+        "geometry",
+        "algebra"
+      ],
+      "learning_objectives": [
+        "Compute distances, midpoints, and slopes between points on the coordinate plane."
+      ]
+    },
+    {
+      "id": "mathematics.geometry.trigonometry_basics",
+      "name": "Trigonometry Basics",
+      "subject": "mathematics",
+      "category": "geometry",
+      "description": "Right-triangle trigonometry: sine, cosine, tangent, and their applications.",
+      "difficulty": 3,
+      "estimated_study_hours": 5,
+      "educational_level": "intermediate",
+      "tags": [
+        "geometry",
+        "trigonometry"
+      ],
+      "learning_objectives": [
+        "Apply sine, cosine, and tangent to solve right-triangle problems."
+      ]
+    },
+    {
+      "id": "mathematics.precalculus.trigonometric_functions",
+      "name": "Trigonometric Functions",
+      "subject": "mathematics",
+      "category": "precalculus",
+      "description": "Extending trigonometry to the unit circle, periodic functions, and radian measure.",
+      "difficulty": 3,
+      "estimated_study_hours": 6,
+      "educational_level": "intermediate",
+      "tags": [
+        "trigonometry",
+        "precalculus"
+      ],
+      "learning_objectives": [
+        "Graph and interpret trigonometric functions over the unit circle."
+      ]
+    },
+    {
+      "id": "mathematics.precalculus.sequences_series",
+      "name": "Sequences and Series",
+      "subject": "mathematics",
+      "category": "precalculus",
+      "description": "Arithmetic and geometric sequences, summation notation, and convergence.",
+      "difficulty": 3,
+      "estimated_study_hours": 5,
+      "educational_level": "intermediate",
+      "tags": [
+        "precalculus"
+      ],
+      "learning_objectives": [
+        "Derive and apply formulas for the nth term and sum of arithmetic and geometric sequences."
+      ]
+    },
+    {
+      "id": "mathematics.precalculus.complex_numbers",
+      "name": "Complex Numbers",
+      "subject": "mathematics",
+      "category": "precalculus",
+      "description": "Representing and operating on numbers with real and imaginary parts.",
+      "difficulty": 3,
+      "estimated_study_hours": 4,
+      "educational_level": "intermediate",
+      "tags": [
+        "precalculus",
+        "algebra"
+      ],
+      "learning_objectives": [
+        "Perform arithmetic on complex numbers and represent them geometrically."
+      ]
+    },
+    {
+      "id": "mathematics.precalculus.rational_functions",
+      "name": "Rational Functions",
+      "subject": "mathematics",
+      "category": "precalculus",
+      "description": "Functions expressed as ratios of polynomials, including asymptotic behavior.",
+      "difficulty": 3,
+      "estimated_study_hours": 5,
+      "educational_level": "intermediate",
+      "tags": [
+        "precalculus",
+        "algebra"
+      ],
+      "learning_objectives": [
+        "Identify asymptotes and discontinuities of rational functions."
+      ]
+    },
+    {
+      "id": "mathematics.calculus.limits",
+      "name": "Limits",
+      "subject": "mathematics",
+      "category": "calculus",
+      "description": "The behavior of a function as its input approaches a particular value.",
+      "difficulty": 4,
+      "estimated_study_hours": 6,
+      "educational_level": "advanced",
+      "tags": [
+        "calculus",
+        "core"
+      ],
+      "learning_objectives": [
+        "Evaluate limits algebraically, graphically, and numerically."
+      ],
+      "importance": 0.9
+    },
+    {
+      "id": "mathematics.calculus.continuity",
+      "name": "Continuity",
+      "subject": "mathematics",
+      "category": "calculus",
+      "description": "Formal definition of continuity and classification of discontinuities.",
+      "difficulty": 3,
+      "estimated_study_hours": 4,
+      "educational_level": "intermediate",
+      "tags": [
+        "calculus"
+      ],
+      "learning_objectives": [
+        "Determine whether a function is continuous at a point using the limit definition."
+      ]
+    },
+    {
+      "id": "mathematics.calculus.derivatives",
+      "name": "Derivatives",
+      "subject": "mathematics",
+      "category": "calculus",
+      "description": "The instantaneous rate of change of a function, defined as the limit of a difference quotient.",
+      "difficulty": 4,
+      "estimated_study_hours": 7,
+      "educational_level": "advanced",
+      "tags": [
+        "calculus",
+        "core"
+      ],
+      "learning_objectives": [
+        "Compute derivatives from the limit definition for simple functions."
+      ],
+      "importance": 0.95
+    },
+    {
+      "id": "mathematics.calculus.differentiation_rules",
+      "name": "Differentiation Rules",
+      "subject": "mathematics",
+      "category": "calculus",
+      "description": "Power, product, quotient, and chain rules for computing derivatives efficiently.",
+      "difficulty": 4,
+      "estimated_study_hours": 6,
+      "educational_level": "advanced",
+      "tags": [
+        "calculus"
+      ],
+      "learning_objectives": [
+        "Apply differentiation rules to compute derivatives of composite functions."
+      ]
+    },
+    {
+      "id": "mathematics.calculus.applications_of_derivatives",
+      "name": "Applications of Derivatives",
+      "subject": "mathematics",
+      "category": "calculus",
+      "description": "Using derivatives for optimization, related rates, and curve sketching.",
+      "difficulty": 4,
+      "estimated_study_hours": 7,
+      "educational_level": "advanced",
+      "tags": [
+        "calculus"
+      ],
+      "learning_objectives": [
+        "Use derivatives to solve real-world optimization and related-rates problems."
+      ]
+    },
+    {
+      "id": "mathematics.calculus.integrals",
+      "name": "Integrals",
+      "subject": "mathematics",
+      "category": "calculus",
+      "description": "The antiderivative and the accumulation of quantities via Riemann sums.",
+      "difficulty": 4,
+      "estimated_study_hours": 7,
+      "educational_level": "advanced",
+      "tags": [
+        "calculus",
+        "core"
+      ],
+      "learning_objectives": [
+        "Compute basic antiderivatives and approximate area under a curve."
+      ]
+    },
+    {
+      "id": "mathematics.calculus.fundamental_theorem",
+      "name": "Fundamental Theorem of Calculus",
+      "subject": "mathematics",
+      "category": "calculus",
+      "description": "The formal link between differentiation and integration.",
+      "difficulty": 5,
+      "estimated_study_hours": 6,
+      "educational_level": "advanced",
+      "tags": [
+        "calculus",
+        "core"
+      ],
+      "learning_objectives": [
+        "State and apply the fundamental theorem of calculus to evaluate definite integrals."
+      ],
+      "importance": 0.9
+    },
+    {
+      "id": "mathematics.calculus.integration_techniques",
+      "name": "Integration Techniques",
+      "subject": "mathematics",
+      "category": "calculus",
+      "description": "Substitution, integration by parts, and partial fractions.",
+      "difficulty": 5,
+      "estimated_study_hours": 8,
+      "educational_level": "advanced",
+      "tags": [
+        "calculus"
+      ],
+      "learning_objectives": [
+        "Select and apply an appropriate integration technique for a given integral."
+      ]
+    },
+    {
+      "id": "mathematics.calculus.differential_equations_intro",
+      "name": "Introduction to Differential Equations",
+      "subject": "mathematics",
+      "category": "calculus",
+      "description": "Basic first-order differential equations and separable equations.",
+      "difficulty": 5,
+      "estimated_study_hours": 8,
+      "educational_level": "advanced",
+      "tags": [
+        "calculus"
+      ],
+      "learning_objectives": [
+        "Solve simple separable first-order differential equations."
+      ]
+    },
+    {
+      "id": "mathematics.linear_algebra.vectors",
+      "name": "Vectors",
+      "subject": "mathematics",
+      "category": "linear_algebra",
+      "description": "Vector representation, magnitude, direction, and basic vector operations.",
+      "difficulty": 2,
+      "estimated_study_hours": 4,
+      "educational_level": "intermediate",
+      "tags": [
+        "linear_algebra",
+        "core"
+      ],
+      "learning_objectives": [
+        "Perform vector addition, scalar multiplication, and compute dot products."
+      ]
+    },
+    {
+      "id": "mathematics.linear_algebra.matrices",
+      "name": "Matrices",
+      "subject": "mathematics",
+      "category": "linear_algebra",
+      "description": "Matrix representation, operations, and their use in representing linear systems.",
+      "difficulty": 3,
+      "estimated_study_hours": 6,
+      "educational_level": "intermediate",
+      "tags": [
+        "linear_algebra",
+        "core"
+      ],
+      "learning_objectives": [
+        "Perform matrix addition, multiplication, and represent a linear system in matrix form."
+      ],
+      "importance": 0.9
+    },
+    {
+      "id": "mathematics.linear_algebra.determinants",
+      "name": "Determinants",
+      "subject": "mathematics",
+      "category": "linear_algebra",
+      "description": "Computing determinants and their geometric and algebraic significance.",
+      "difficulty": 4,
+      "estimated_study_hours": 5,
+      "educational_level": "advanced",
+      "tags": [
+        "linear_algebra"
+      ],
+      "learning_objectives": [
+        "Compute determinants of 2x2 and 3x3 matrices and interpret their meaning."
+      ]
+    },
+    {
+      "id": "mathematics.linear_algebra.linear_systems_matrix_form",
+      "name": "Linear Systems in Matrix Form",
+      "subject": "mathematics",
+      "category": "linear_algebra",
+      "description": "Solving systems of linear equations using matrix methods such as Gaussian elimination.",
+      "difficulty": 3,
+      "estimated_study_hours": 5,
+      "educational_level": "intermediate",
+      "tags": [
+        "linear_algebra"
+      ],
+      "learning_objectives": [
+        "Solve linear systems using Gaussian elimination in matrix form."
+      ]
+    },
+    {
+      "id": "mathematics.linear_algebra.eigenvalues_eigenvectors",
+      "name": "Eigenvalues and Eigenvectors",
+      "subject": "mathematics",
+      "category": "linear_algebra",
+      "description": "Finding eigenvalues and eigenvectors and their significance for linear transformations.",
+      "difficulty": 5,
+      "estimated_study_hours": 7,
+      "educational_level": "advanced",
+      "tags": [
+        "linear_algebra"
+      ],
+      "learning_objectives": [
+        "Compute eigenvalues and eigenvectors of a small square matrix."
+      ],
+      "importance": 0.85
+    },
+    {
+      "id": "mathematics.linear_algebra.vector_spaces",
+      "name": "Vector Spaces",
+      "subject": "mathematics",
+      "category": "linear_algebra",
+      "description": "Abstract vector spaces, basis, dimension, and linear independence.",
+      "difficulty": 5,
+      "estimated_study_hours": 8,
+      "educational_level": "advanced",
+      "tags": [
+        "linear_algebra"
+      ],
+      "learning_objectives": [
+        "Determine whether a set of vectors forms a basis for a given vector space."
+      ]
+    },
+    {
+      "id": "mathematics.statistics.probability_basics",
+      "name": "Probability Basics",
+      "subject": "mathematics",
+      "category": "statistics",
+      "description": "Fundamental probability concepts: sample spaces, events, and basic probability rules.",
+      "difficulty": 2,
+      "estimated_study_hours": 4,
+      "educational_level": "foundational",
+      "tags": [
+        "statistics",
+        "core"
+      ],
+      "learning_objectives": [
+        "Compute probabilities of simple and compound events."
+      ]
+    },
+    {
+      "id": "mathematics.statistics.combinatorics",
+      "name": "Combinatorics",
+      "subject": "mathematics",
+      "category": "statistics",
+      "description": "Counting techniques including permutations and combinations.",
+      "difficulty": 3,
+      "estimated_study_hours": 4,
+      "educational_level": "intermediate",
+      "tags": [
+        "statistics"
+      ],
+      "learning_objectives": [
+        "Apply permutation and combination formulas to solve counting problems."
+      ]
+    },
+    {
+      "id": "mathematics.statistics.descriptive_statistics",
+      "name": "Descriptive Statistics",
+      "subject": "mathematics",
+      "category": "statistics",
+      "description": "Measures of central tendency and spread: mean, median, mode, variance, standard deviation.",
+      "difficulty": 2,
+      "estimated_study_hours": 3,
+      "educational_level": "foundational",
+      "tags": [
+        "statistics",
+        "core"
+      ],
+      "learning_objectives": [
+        "Compute and interpret measures of central tendency and spread for a dataset."
+      ]
+    },
+    {
+      "id": "mathematics.statistics.probability_distributions",
+      "name": "Probability Distributions",
+      "subject": "mathematics",
+      "category": "statistics",
+      "description": "Discrete and continuous probability distributions including binomial and normal distributions.",
+      "difficulty": 4,
+      "estimated_study_hours": 6,
+      "educational_level": "advanced",
+      "tags": [
+        "statistics"
+      ],
+      "learning_objectives": [
+        "Apply the binomial and normal distributions to compute probabilities."
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "mathematics.arithmetic.number_sense",
+      "target": "mathematics.algebra.variables_expressions"
+    },
+    {
+      "source": "mathematics.algebra.variables_expressions",
+      "target": "mathematics.algebra.linear_equations"
+    },
+    {
+      "source": "mathematics.algebra.linear_equations",
+      "target": "mathematics.algebra.inequalities"
+    },
+    {
+      "source": "mathematics.algebra.variables_expressions",
+      "target": "mathematics.algebra.functions"
+    },
+    {
+      "source": "mathematics.algebra.linear_equations",
+      "target": "mathematics.algebra.systems_of_equations"
+    },
+    {
+      "source": "mathematics.algebra.functions",
+      "target": "mathematics.algebra.exponents_logarithms"
+    },
+    {
+      "source": "mathematics.algebra.functions",
+      "target": "mathematics.algebra.polynomials"
+    },
+    {
+      "source": "mathematics.algebra.polynomials",
+      "target": "mathematics.algebra.quadratic_equations"
+    },
+    {
+      "source": "mathematics.arithmetic.number_sense",
+      "target": "mathematics.geometry.euclidean_basics"
+    },
+    {
+      "source": "mathematics.geometry.euclidean_basics",
+      "target": "mathematics.geometry.coordinate_geometry"
+    },
+    {
+      "source": "mathematics.algebra.functions",
+      "target": "mathematics.geometry.coordinate_geometry"
+    },
+    {
+      "source": "mathematics.geometry.euclidean_basics",
+      "target": "mathematics.geometry.trigonometry_basics"
+    },
+    {
+      "source": "mathematics.geometry.trigonometry_basics",
+      "target": "mathematics.precalculus.trigonometric_functions"
+    },
+    {
+      "source": "mathematics.algebra.functions",
+      "target": "mathematics.precalculus.trigonometric_functions"
+    },
+    {
+      "source": "mathematics.algebra.functions",
+      "target": "mathematics.precalculus.sequences_series"
+    },
+    {
+      "source": "mathematics.algebra.quadratic_equations",
+      "target": "mathematics.precalculus.complex_numbers"
+    },
+    {
+      "source": "mathematics.algebra.polynomials",
+      "target": "mathematics.precalculus.rational_functions"
+    },
+    {
+      "source": "mathematics.algebra.functions",
+      "target": "mathematics.precalculus.rational_functions"
+    },
+    {
+      "source": "mathematics.algebra.functions",
+      "target": "mathematics.calculus.limits"
+    },
+    {
+      "source": "mathematics.precalculus.rational_functions",
+      "target": "mathematics.calculus.limits"
+    },
+    {
+      "source": "mathematics.calculus.limits",
+      "target": "mathematics.calculus.continuity"
+    },
+    {
+      "source": "mathematics.calculus.limits",
+      "target": "mathematics.calculus.derivatives"
+    },
+    {
+      "source": "mathematics.calculus.derivatives",
+      "target": "mathematics.calculus.differentiation_rules"
+    },
+    {
+      "source": "mathematics.calculus.differentiation_rules",
+      "target": "mathematics.calculus.applications_of_derivatives"
+    },
+    {
+      "source": "mathematics.calculus.derivatives",
+      "target": "mathematics.calculus.integrals"
+    },
+    {
+      "source": "mathematics.calculus.integrals",
+      "target": "mathematics.calculus.fundamental_theorem"
+    },
+    {
+      "source": "mathematics.calculus.continuity",
+      "target": "mathematics.calculus.fundamental_theorem"
+    },
+    {
+      "source": "mathematics.calculus.fundamental_theorem",
+      "target": "mathematics.calculus.integration_techniques"
+    },
+    {
+      "source": "mathematics.calculus.integration_techniques",
+      "target": "mathematics.calculus.differential_equations_intro"
+    },
+    {
+      "source": "mathematics.geometry.coordinate_geometry",
+      "target": "mathematics.linear_algebra.vectors"
+    },
+    {
+      "source": "mathematics.linear_algebra.vectors",
+      "target": "mathematics.linear_algebra.matrices"
+    },
+    {
+      "source": "mathematics.algebra.systems_of_equations",
+      "target": "mathematics.linear_algebra.matrices"
+    },
+    {
+      "source": "mathematics.linear_algebra.matrices",
+      "target": "mathematics.linear_algebra.determinants"
+    },
+    {
+      "source": "mathematics.linear_algebra.matrices",
+      "target": "mathematics.linear_algebra.linear_systems_matrix_form"
+    },
+    {
+      "source": "mathematics.linear_algebra.determinants",
+      "target": "mathematics.linear_algebra.eigenvalues_eigenvectors"
+    },
+    {
+      "source": "mathematics.linear_algebra.eigenvalues_eigenvectors",
+      "target": "mathematics.linear_algebra.vector_spaces"
+    },
+    {
+      "source": "mathematics.linear_algebra.vectors",
+      "target": "mathematics.linear_algebra.vector_spaces"
+    },
+    {
+      "source": "mathematics.arithmetic.number_sense",
+      "target": "mathematics.statistics.probability_basics"
+    },
+    {
+      "source": "mathematics.statistics.probability_basics",
+      "target": "mathematics.statistics.combinatorics"
+    },
+    {
+      "source": "mathematics.arithmetic.number_sense",
+      "target": "mathematics.statistics.descriptive_statistics"
+    },
+    {
+      "source": "mathematics.statistics.probability_basics",
+      "target": "mathematics.statistics.probability_distributions"
+    },
+    {
+      "source": "mathematics.statistics.combinatorics",
+      "target": "mathematics.statistics.probability_distributions"
+    }
+  ]
+}

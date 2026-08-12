@@ -1,0 +1,155 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://project-step-zero/schema/concept_schema.json",
+  "title": "Project Step Zero Subject File",
+  "description": "Schema for a single STEM subject file containing concepts (nodes) and prerequisite relationships (edges).",
+  "type": "object",
+  "required": ["schema_version", "subject", "concepts", "edges"],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "description": "Version of this schema the file conforms to, e.g. '1.0'.",
+      "pattern": "^[0-9]+\\.[0-9]+$"
+    },
+    "subject": {
+      "type": "string",
+      "description": "The STEM subject this file represents, e.g. 'mathematics'.",
+      "pattern": "^[a-z0-9_]+$"
+    },
+    "concepts": {
+      "type": "array",
+      "description": "All concept nodes in this subject.",
+      "items": { "$ref": "#/$defs/concept" },
+      "minItems": 1
+    },
+    "edges": {
+      "type": "array",
+      "description": "All prerequisite relationships in this subject. Direction: source (prerequisite) -> target (dependent concept).",
+      "items": { "$ref": "#/$defs/edge" }
+    }
+  },
+  "$defs": {
+    "concept": {
+      "type": "object",
+      "required": ["id", "name", "subject", "description", "difficulty", "estimated_study_hours"],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Globally unique, namespaced identifier: subject.category.concept_name",
+          "pattern": "^[a-z0-9_]+(\\.[a-z0-9_]+){2,}$"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "subject": {
+          "type": "string",
+          "pattern": "^[a-z0-9_]+$"
+        },
+        "category": {
+          "type": "string",
+          "pattern": "^[a-z0-9_]+$"
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1
+        },
+        "difficulty": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 5
+        },
+        "estimated_study_hours": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "importance": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "educational_level": {
+          "type": "string",
+          "enum": ["foundational", "intermediate", "advanced"]
+        },
+        "tags": {
+          "type": "array",
+          "items": { "type": "string" },
+          "uniqueItems": true
+        },
+        "aliases": {
+          "type": "array",
+          "items": { "type": "string" },
+          "uniqueItems": true
+        },
+        "learning_objectives": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "examples": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "references": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["title"],
+            "additionalProperties": false,
+            "properties": {
+              "title": { "type": "string" },
+              "url": { "type": "string", "format": "uri" },
+              "type": { "type": "string" }
+            }
+          }
+        },
+        "confidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "metadata": {
+          "type": "object",
+          "description": "Open catch-all for experimental fields not yet promoted to first-class schema fields.",
+          "additionalProperties": true
+        }
+      }
+    },
+    "edge": {
+      "type": "object",
+      "required": ["source", "target"],
+      "additionalProperties": false,
+      "properties": {
+        "source": {
+          "type": "string",
+          "description": "The prerequisite concept id."
+        },
+        "target": {
+          "type": "string",
+          "description": "The dependent concept id that requires 'source'."
+        },
+        "type": {
+          "type": "string",
+          "enum": ["required", "recommended", "helpful"],
+          "default": "required"
+        },
+        "strength": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "default": 1.0
+        },
+        "confidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
