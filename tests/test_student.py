@@ -234,7 +234,7 @@ def test_eligible_concepts_excludes_already_mastered_nodes(diamond_graph, studen
 # Serialization
 
 def test_student_to_dict_from_dict_round_trip(diamond_graph):
-    student = Student(student_id="s1", name="Alice", metadata={"cohort": "2026"})
+    student = Student(student_id="s1", name="Test Learner", metadata={"cohort": "2026"})
     student.start_concept("a")
     student.record_attempt("a", score=0.8, time_spent_hours=1.5, self_rated_confidence=0.6)
     student.mark_mastered("a")
@@ -276,7 +276,7 @@ def test_concept_progress_round_trip_preserves_none_timestamps():
 
 def test_student_cohort_add_and_get():
     cohort = StudentCohort()
-    student = Student(student_id="s1", name="Alice")
+    student = Student(student_id="s1", name="First Learner")
     cohort.add(student)
     assert cohort.get("s1") is student
     assert cohort.get("missing") is None
@@ -284,9 +284,9 @@ def test_student_cohort_add_and_get():
 
 def test_student_cohort_rejects_duplicate_id():
     cohort = StudentCohort()
-    cohort.add(Student(student_id="s1", name="Alice"))
+    cohort.add(Student(student_id="s1", name="First Learner"))
     with pytest.raises(StudentModelError):
-        cohort.add(Student(student_id="s1", name="Alice Again"))
+        cohort.add(Student(student_id="s1", name="Duplicate Learner"))
 
 
 def test_student_cohort_average_mastery_empty_is_zero():
@@ -296,9 +296,9 @@ def test_student_cohort_average_mastery_empty_is_zero():
 
 def test_student_cohort_average_mastery_across_students():
     cohort = StudentCohort()
-    s1 = Student(student_id="s1", name="Alice")
+    s1 = Student(student_id="s1", name="First Learner")
     s1.mark_mastered("c1", mastery_score=1.0)
-    s2 = Student(student_id="s2", name="Bob")
+    s2 = Student(student_id="s2", name="Second Learner")
     s2.mark_mastered("c1", mastery_score=0.0)
     cohort.add(s1)
     cohort.add(s2)
@@ -307,6 +307,6 @@ def test_student_cohort_average_mastery_across_students():
 
 def test_student_cohort_all_returns_every_student():
     cohort = StudentCohort()
-    cohort.add(Student(student_id="s1", name="Alice"))
-    cohort.add(Student(student_id="s2", name="Bob"))
+    cohort.add(Student(student_id="s1", name="First Learner"))
+    cohort.add(Student(student_id="s2", name="Second Learner"))
     assert {s.student_id for s in cohort.all()} == {"s1", "s2"}

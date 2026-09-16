@@ -98,7 +98,7 @@ def test_weighted_graph_marks_missing_signals(attributed_graph):
 
 
 def test_weighted_graph_mastery_signal_present_when_student_given(attributed_graph):
-    student = Student(student_id="s1", name="Alice")
+    student = Student(student_id="s1", name="Test Learner")
     student.record_attempt("a", score=0.9)
     wg = WeightedGraph(attributed_graph, profile=BALANCED_PROFILE, student=student)
     scores = wg.compute_scores()

@@ -15,10 +15,10 @@ from stepzero.student import Student
 def category_graph() -> nx.DiGraph:
     # Four isolated nodes across two categories, so articulation_points() stays empty.
     g = nx.DiGraph()
-    g.add_node("n1", category="foo")
-    g.add_node("n2", category="foo")
-    g.add_node("n3", category="bar")
-    g.add_node("n4", category="bar")
+    g.add_node("n1", category="core")
+    g.add_node("n2", category="core")
+    g.add_node("n3", category="applied")
+    g.add_node("n4", category="applied")
     return g
 
 
@@ -108,7 +108,7 @@ def test_evaluate_simulation_no_bottlenecks_defaults_to_full_rate():
 
 def test_evaluate_simulation_category_completion_rates():
     metrics = evaluate_simulation(hand_built_result(), category_graph())
-    assert metrics.category_completion_rates == {"foo": 1.0, "bar": 0.5}
+    assert metrics.category_completion_rates == {"core": 1.0, "applied": 0.5}
 
 
 def test_evaluate_simulation_bottleneck_rate_reflects_articulation_points():
