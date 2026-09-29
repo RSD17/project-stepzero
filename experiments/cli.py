@@ -1,4 +1,5 @@
 import argparse
+import json
 import sys
 from pathlib import Path
 
@@ -7,6 +8,13 @@ from stepzero.student_profiles import ProfileError
 
 from experiments.config import ExperimentConfigError
 from experiments.definitions import EXPERIMENT_REGISTRY, get_experiment, list_experiments
+from experiments.interventions import (
+    intervention_config_hash,
+    intervention_freeze_document,
+    intervention_policy_payload,
+    load_freeze_document,
+    write_freeze_document,
+)
 from experiments.reporting import summarize_experiment
 from experiments.results import ExperimentResult, ExperimentResultError
 from experiments.runner import ExperimentRunner, ExperimentRunError
@@ -49,6 +57,12 @@ def _build_parser() -> argparse.ArgumentParser:
     run_parser.add_argument("--quiet", action="store_true", help="Suppress per-run progress output.")
     run_parser.add_argument("--subjects-dir", default=None, help="Optional alternative curriculum directory.")
     run_parser.add_argument("--profiles-dir", default=None, help="Optional alternative student profile directory.")
+
+    freeze_parser = subparsers.add_parser(
+        "intervention", help="Print, write, or verify the frozen primary intervention configuration."
+    )
+    freeze_parser.add_argument("--write", action="store_true", help="Write the freeze document to data/interventions.")
+    freeze_parser.add_argument("--verify", action="store_true", help="Check the stored document against the code.")
 
     show_parser = subparsers.add_parser("show", help="Summarize a saved experiment result file.")
     show_parser.add_argument("path", help="Path to a JSON file produced by 'run'.")
@@ -114,6 +128,35 @@ def _command_run(args: argparse.Namespace) -> int:
     return 1 if result.failed_runs else 0
 
 
+def _command_intervention(args: argparse.Namespace) -> int:
+    from stepzero.graph_builder import build_graph
+
+    graph = build_graph()
+    document = intervention_freeze_document(graph)
+
+    if args.write:
+        print(f"Wrote {write_freeze_document(graph=graph)}")
+        return 0
+
+    if args.verify:
+        stored = load_freeze_document()
+        policy = intervention_policy_payload()
+        policy_matches = {k: stored.get(k) for k in policy} == policy
+        hash_matches = stored.get("config_hash") == document["config_hash"]
+        curriculum_matches = (
+            stored.get("provenance", {}).get("curriculum_fingerprint")
+            == document["provenance"]["curriculum_fingerprint"]
+        )
+        print(f"policy matches code:       {policy_matches}")
+        print(f"config_hash matches code:  {hash_matches}")
+        print(f"curriculum fingerprint ok: {curriculum_matches}")
+        print(f"config_hash:               {intervention_config_hash()}")
+        return 0 if policy_matches and hash_matches and curriculum_matches else 1
+
+    print(json.dumps(document, indent=2))
+    return 0
+
+
 def _command_show(args: argparse.Namespace) -> int:
     result = ExperimentResult.load(args.path)
     metric = args.metric or result.config.headline_metric
@@ -142,6 +185,8 @@ def main(argv: list[str] | None = None) -> int:
             return _command_list()
         if args.command == "run":
             return _command_run(args)
+        if args.command == "intervention":
+            return _command_intervention(args)
         if args.command == "show":
             return _command_show(args)
     except (ExperimentConfigError, ExperimentRunError, ExperimentResultError) as e:

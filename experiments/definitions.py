@@ -11,6 +11,7 @@ from experiments.config import (
     builtin_weight_profile_strategies,
     default_strategy,
 )
+from experiments.interventions import PRIMARY_INTERVENTION_NAME, primary_intervention_strategy
 
 # The five committed synthetic personas, used as the standard experimental cohort.
 ALL_PROFILE_IDS = [
@@ -20,6 +21,24 @@ ALL_PROFILE_IDS = [
     "intermediate_student",
     "struggling_student",
 ]
+
+
+def primary_intervention() -> ExperimentConfig:
+    # Single-arm reference run of the frozen primary randomized treatment.
+    return ExperimentConfig(
+        name="primary_intervention",
+        description=(
+            f"Reference run of the frozen primary randomized treatment, {PRIMARY_INTERVENTION_NAME}, "
+            f"across every synthetic learner profile over five fixed seeds. Single arm, so it "
+            f"characterises the intervention rather than ranking it against an alternative."
+        ),
+        profile_ids=list(ALL_PROFILE_IDS),
+        strategies=[primary_intervention_strategy()],
+        learner_models=["average"],
+        seeds=list(DEFAULT_SEEDS),
+        simulation=SimulationConfig(max_sessions=120, seed=0),
+        headline_metric="completion_rate",
+    )
 
 
 def weighting_profile_comparison() -> ExperimentConfig:
@@ -111,6 +130,7 @@ def seed_stability() -> ExperimentConfig:
 
 
 EXPERIMENT_REGISTRY: dict[str, Callable[[], ExperimentConfig]] = {
+    "primary_intervention": primary_intervention,
     "weighting_profile_comparison": weighting_profile_comparison,
     "weighting_versus_default": weighting_versus_default,
     "learner_model_comparison": learner_model_comparison,
