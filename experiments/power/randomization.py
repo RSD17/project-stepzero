@@ -6,9 +6,7 @@ class RandomizationError(Exception):
 
 
 def allocate_within_group(group_size: int, rng: np.random.Generator) -> np.ndarray:
-    # Individual 1:1 allocation blocked within tutor group, methodology section 13.1.
-    # Odd group sizes receive floor(m/2) or ceil(m/2) treated, direction chosen by the generator,
-    # so no systematic imbalance accumulates across groups.
+    # Individual 1:1 allocation blocked within tutor group, methodology section 13.1
     if group_size < 2:
         raise RandomizationError(f"a tutor group needs at least 2 students to randomize, got {group_size}")
 

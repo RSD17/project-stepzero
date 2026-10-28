@@ -48,11 +48,9 @@ def _imported_modules(filename):
     return names
 
 
-# Decision D5: the analytic procedure is primary and confirmatory, the bootstrap is the
-# pre-specified sensitivity analysis. These must not blur into each other.
+# Decision D5: the analytic procedure is primary, the bootstrap is the sensitivity analysis
 def test_power_surface_never_reaches_the_bootstrap():
-    # The surface characterizes the primary analysis only. If this fails, a surface cell's
-    # rejection decision may no longer be the confirmatory one.
+    # The surface characterizes the primary analysis only
     for filename in ("surface.py", "replicate.py", "analysis.py", "selection.py", "reporting.py"):
         imported = _imported_modules(filename)
         assert not any("bootstrap" in name for name in imported), (
@@ -66,8 +64,7 @@ def test_bootstrap_is_reached_only_through_the_validation_path():
 
 
 def test_primary_fit_is_self_contained(power_config, study):
-    # The confirmatory estimate, its standard error, interval and p-value all come from the
-    # delta-method fit with no resampling involved.
+    # The confirmatory estimate and interval come from the delta-method fit, no resampling
     standardized = standardize_against_control(
         study.raw_pct, study.subject_index, study.treatment, study.observed
     )
@@ -204,11 +201,9 @@ def test_both_procedures_target_the_same_estimate(power_config, study):
     # The resample mean is centred on the primary estimate to within its own resampling error.
     assert abs(boot.estimate - analytic) < 4.0 * boot.bootstrap_sd / np.sqrt(boot.n_successful)
 
-# Decisions D6 to D9, resolved 2026-10-06. These pin the protocol commitments that are expressible
-# in code so a later refactor cannot quietly undo them.
+# Decisions D6 to D9, resolved 2026-10-06, pinned so a refactor cannot quietly undo them
 def test_bootstrap_p_value_cannot_enter_a_study_analysis_path():
-    # D6: the bootstrap is interval-only in the study. The p-value is a simulation diagnostic, so
-    # it may be read by the validation comparison and by nothing else.
+    # D6: the bootstrap p-value is a diagnostic, read only by the validation comparison
     allowed = {"bootstrap.py", "validation.py"}
     offenders = []
     for path in PACKAGE.glob("*.py"):
@@ -283,8 +278,7 @@ def test_no_correction_was_introduced_for_the_standardization_denominator():
 
 
 def test_null_bias_property_holds_on_the_completed_primary_surface():
-    # D9: the ratio bias is multiplicative in tau, so it must vanish under the complete null.
-    # Read from the committed surface rather than re-simulating.
+    # D9: the ratio bias is multiplicative in tau, so it must vanish under the complete null
     surface = Path("experiments/results/power/power_surface_primary.json")
     if not surface.exists():
         pytest.skip("primary surface not present in this working tree")

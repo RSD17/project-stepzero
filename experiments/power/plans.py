@@ -3,8 +3,7 @@ from typing import Callable
 from experiments.power.config import PowerConfig
 from experiments.power.replicate import ScenarioKey
 
-# Sensitivity plans use a reduced set of design cells so that varying nuisance parameters stays
-# computationally tractable. The primary plan always covers the full 36-cell grid.
+# Sensitivity plans use a reduced grid; the primary plan always covers all 36 cells
 SENSITIVITY_GROUPS = (6, 10, 14)
 SENSITIVITY_STUDENTS = (8, 12, 16)
 
@@ -74,8 +73,7 @@ def plan_attrition_sensitivity(config: PowerConfig) -> list[ScenarioKey]:
 
 
 def plan_heterogeneity(config: PowerConfig) -> list[ScenarioKey]:
-    # The null is included so the plan is self-contained: any plan handed to the design-selection
-    # step must carry its own Type I error evidence.
+    # The null is included so the plan carries its own Type I error evidence
     return [
         _key(config, g, m, effect)
         for effect in (*HETEROGENEOUS_EFFECTS, "null")

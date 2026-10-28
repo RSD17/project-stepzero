@@ -26,10 +26,7 @@ from experiments.power.replicate import ReplicateRecord, ScenarioKey, run_single
 
 DEFAULT_RESULTS_DIR = Path(__file__).resolve().parent.parent / "results" / "power"
 
-# Each worker process re-imports numpy and scipy, and a multi-threaded BLAS allocates a thread
-# pool per process. The design matrices here are at most a few thousand by a hundred, so threaded
-# BLAS buys nothing and spawning several workers can exhaust memory. Pinning the thread count in
-# the parent environment means spawned children inherit it at import time.
+# Pin BLAS threads in the parent so spawned workers inherit it and cannot exhaust memory
 _BLAS_THREAD_VARIABLES = (
     "OPENBLAS_NUM_THREADS",
     "MKL_NUM_THREADS",
@@ -219,8 +216,7 @@ class CellResult:
 
 
 def _run_chunk(args: tuple[PowerConfig, ScenarioKey, list[int]]) -> list[ReplicateRecord]:
-    # Worker entry point. Each replicate derives its own stream from its index, so the result is
-    # independent of how the indices are distributed across workers.
+    # Worker entry point. Each replicate derives its stream from its index, not its worker
     config, key, indices = args
     return [run_single_simulation(config, key, index) for index in indices]
 
@@ -249,9 +245,7 @@ def run_design_cell(
             with ProcessPoolExecutor(max_workers=workers) as pool:
                 records = [record for chunk in pool.map(_run_chunk, payloads) for record in chunk]
         except (BrokenExecutor, OSError, MemoryError) as e:
-            # A worker can be killed by the operating system under memory pressure. Falling back
-            # to serial execution costs time but never changes the result, because every
-            # replicate derives its stream from its own index.
+            # Serial fallback if a worker is killed under memory pressure; results are unchanged
             print(
                 f"  worker pool failed for {key.cell_id} ({type(e).__name__}), "
                 f"falling back to serial execution",

@@ -93,8 +93,7 @@ def test_bootstrap_sd_is_the_same_order_as_the_analytic_error(power_config, stud
         rng=np.random.default_rng(11),
     )
     ratio = result.bootstrap_sd / analytic.student_weighted.standard_error
-    # The bootstrap accounts for the estimated standardization, so it should be at least as wide,
-    # but on a single dataset the comparison is noisy. A factor of two either way is the bound.
+    # The bootstrap should be at least as wide, but on one dataset a factor of two is the bound
     assert 0.5 < ratio < 2.0
 
 
@@ -144,8 +143,7 @@ def test_validation_suite_enumerates_the_reported_conditions(power_config):
     assert "smallest design" in labels
     assert "higher ICC" in labels
 
-    # Every condition must appear under both the null and the alternative so that Type I error and
-    # power are measured on the same design.
+    # Every condition must appear under both the null and the alternative
     for label in labels:
         effects = {key.effect_id for other, key in pairs if other == label}
         assert effects == set(VALIDATION_EFFECTS)

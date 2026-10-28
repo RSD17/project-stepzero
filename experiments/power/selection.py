@@ -4,8 +4,7 @@ from typing import Any, Iterable
 from experiments.power.config import SIDEDNESS_ONE, PowerConfig
 from experiments.power.surface import CellResult, PowerSurface, rejection_rate
 
-# Every threshold below is a methodology decision, not a statistical fact. They are surfaced here
-# so a reviewer can change them and re-rank the designs without touching simulation code.
+# Every threshold below is a methodology decision, not a statistical fact
 DEFAULT_THRESHOLDS: dict[str, float] = {
     "type_I_error_tolerance": 0.010,
     "target_power": 0.80,
@@ -75,8 +74,7 @@ def evaluate_designs(
     thresholds: dict[str, float] | None = None,
     sidedness: str | None = None,
 ) -> list[DesignEvaluation]:
-    # A design is judged on calibration, power at the benchmark, power under the worst sensitivity
-    # condition observed, interval coverage, bias, and convergence. Not on power alone.
+    # Designs are judged on calibration, power, coverage, bias and convergence, not power alone
     limits = {**DEFAULT_THRESHOLDS, **(thresholds or {})}
     convention = sidedness or config.inference.primary_sidedness
     alpha = config.inference.alpha
@@ -165,8 +163,7 @@ def evaluate_designs(
 
 
 def robust_region(evaluations: Iterable[DesignEvaluation]) -> list[DesignEvaluation]:
-    # Designs that satisfy every criterion, ordered by recruitment burden so the smallest
-    # defensible design is visible without being automatically selected.
+    # Passing designs ordered by recruitment burden, without automatic selection
     passing = [e for e in evaluations if e.passes]
     return sorted(passing, key=lambda e: (e.total_randomized, e.groups_per_subject, e.students_per_group))
 

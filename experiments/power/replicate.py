@@ -115,10 +115,8 @@ class ReplicateRecord:
 
 
 def replicate_rng(master_seed: int, cell_id: str, replicate_index: int) -> np.random.Generator:
-    # Deterministic, independent stream per (cell, replicate). The spawn key is derived from a
-    # CRC32 of the cell id rather than Python's randomized string hash, so streams are stable
-    # across processes, working directories and PYTHONHASHSEED values, and are independent of
-    # execution order, which makes results invariant to worker count.
+    # Deterministic independent stream per cell and replicate, stable across processes
+    # The spawn key uses CRC32, not Python's randomized string hash, so PYTHONHASHSEED cannot shift it
     key = (zlib.crc32(cell_id.encode("utf-8")) & 0x7FFFFFFF, replicate_index)
     return np.random.default_rng(np.random.SeedSequence(master_seed, spawn_key=key))
 
@@ -132,8 +130,7 @@ def run_single_simulation(
     missingness: MissingnessScenario | None = None,
     recruitment: RecruitmentScenario | None = None,
 ) -> ReplicateRecord:
-    # Full chain for one replicate: generate, randomize, realize outcomes, apply missingness,
-    # standardize against the observed control arm, fit the primary model, form the contrast.
+    # Full chain: generate, randomize, realize, apply missingness, standardize, fit, contrast
     variance = variance or config.variance_params(key.variance_id)
     effects = effects or config.effect_scenario(key.effect_id)
     missingness = missingness or config.missingness_scenario(key.missingness_id)

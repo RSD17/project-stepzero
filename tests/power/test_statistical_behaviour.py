@@ -4,8 +4,7 @@ from experiments.power.config import PowerConfig
 from experiments.power.replicate import ScenarioKey
 from experiments.power.surface import run_design_cell
 
-# Replication counts are deliberately modest so the suite stays fast. Every result is
-# deterministic for a fixed master seed, so these assertions either always hold or always fail.
+# Modest replication counts; every result is deterministic for a fixed master seed
 R = 400
 
 
@@ -81,12 +80,7 @@ def test_standard_error_shrinks_as_the_design_grows(power_config):
 # Nuisance parameters
 
 def test_higher_icc_improves_precision_under_within_group_randomization(power_config):
-    # This is the opposite of a cluster-randomized trial and is not a bug. Treatment is
-    # randomized within tutor groups and the analysis carries tutor-group fixed effects, so the
-    # tutor-level variance is absorbed and never enters the contrast. Because the configuration
-    # holds control-arm total variance at 1, raising ICC moves variance from the residual into
-    # the absorbed tutor component, leaving less within-group noise. Methodology section 14.3
-    # anticipates this by calling ICC a precision parameter rather than a design effect.
+    # Not a cluster-randomized trial: tutor variance is absorbed, so higher ICC means less noise
     low_icc = power_config.variance_params("icc_001")
     high_icc = power_config.variance_params("icc_010")
     low = cell(power_config, 8, 12, "homog_030", variance="icc_001")

@@ -7,8 +7,7 @@ from scipy import linalg, stats
 from experiments.power.config import SIDEDNESS_ONE, SIDEDNESS_TWO, SUBJECT_IDS, InferenceParams
 from experiments.power.estimand import SubjectWeights
 
-# Mathematics is the interaction reference subject. Its treatment effect is the treatment main
-# effect; the other four are the main effect plus their interaction coefficient.
+# Mathematics is the interaction reference subject
 REFERENCE_SUBJECT_INDEX = 0
 
 STATUS_SUCCESS = "SUCCESS"
@@ -80,9 +79,7 @@ class PrimaryFit:
 def standardize_against_control(
     raw_pct: np.ndarray, subject_index: np.ndarray, treatment: np.ndarray, observed: np.ndarray
 ) -> StandardizedOutcome:
-    # The reference mean and SD come from observed conventional-arm students within each subject,
-    # which is all the real study will have. The estimand weights use randomized counts instead,
-    # and that asymmetry is intentional.
+    # Reference moments come from observed control students, unlike the randomized weights
     z = np.full(raw_pct.size, np.nan, dtype=float)
     means: dict[str, float] = {}
     sds: dict[str, float] = {}
@@ -107,8 +104,7 @@ def standardize_against_control(
 def estimand_is_identified(
     subject_index: np.ndarray, tutor_index: np.ndarray, treatment: np.ndarray, observed: np.ndarray
 ) -> bool:
-    # With tutor-group fixed effects, a subject-specific effect needs at least one tutor group in
-    # that subject contributing observed students from both arms.
+    # A subject-specific effect needs a tutor group with observed students in both arms
     for index in range(len(SUBJECT_IDS)):
         subject_mask = (subject_index == index) & observed
         if not subject_mask.any():
@@ -132,10 +128,8 @@ def build_design_matrix(
     baseline_pct: np.ndarray,
     observed: np.ndarray,
 ) -> tuple[np.ndarray, int, list[int]]:
-    # Columns: intercept, tutor-group fixed effects nested within subject, baseline mastery,
-    # treatment, and treatment by subject interactions for the four non-reference subjects.
-    # A separate subject main effect is deliberately omitted because the nested tutor fixed
-    # effects already span the subject indicators; including it would be rank deficient.
+    # Columns: intercept, nested tutor fixed effects, baseline, treatment, treatment by subject
+    # No subject main effect: the nested tutor effects already span it, so adding one is rank deficient
     rows = np.flatnonzero(observed)
     n = rows.size
 
@@ -143,8 +137,7 @@ def build_design_matrix(
     tutor_obs = tutor_index[rows]
     treat_obs = treatment[rows].astype(float)
 
-    # Baseline mastery is standardized within subject for interpretability. The fit is invariant
-    # to this linear rescaling.
+    # Baseline is standardized within subject; the fit is invariant to this rescaling
     baseline_obs = np.empty(n, dtype=float)
     baseline_rows = baseline_pct[rows]
     for index in range(len(SUBJECT_IDS)):
@@ -155,8 +148,7 @@ def build_design_matrix(
         sd = values.std(ddof=1) if values.size > 1 else 0.0
         baseline_obs[mask] = (values - values.mean()) / sd if sd > 0 else 0.0
 
-    # Only tutor groups with observed students get a column, so no structurally empty column
-    # enters the fit. One group is absorbed by the intercept.
+    # Only tutor groups with observed students get a column; one is absorbed by the intercept
     groups = np.unique(tutor_obs)
     dummy_groups = groups[1:]
     n_dummies = dummy_groups.size
@@ -190,8 +182,7 @@ def fit_primary_model(
     weights: SubjectWeights,
     inference: InferenceParams,
 ) -> PrimaryFit:
-    # Ordinary least squares on the standardized outcome, methodology section 15.1, then the
-    # pre-specified linear contrast of the five subject-specific effects, section 15.2.
+    # OLS on the standardized outcome, then the prespecified contrast of subject effects
     rows = np.flatnonzero(observed)
     y = z[rows]
     if not np.all(np.isfinite(y)):
@@ -208,8 +199,7 @@ def fit_primary_model(
         )
 
     xtx = X.T @ X
-    # X'X is positive definite exactly when X has full column rank, so a failed Cholesky
-    # factorization is the rank check. This is far cheaper than an SVD-based rank call.
+    # A failed Cholesky factorization is the full-rank check, cheaper than an SVD
     try:
         factor = linalg.cho_factor(xtx, lower=True, check_finite=False)
     except (linalg.LinAlgError, np.linalg.LinAlgError):
@@ -226,8 +216,7 @@ def fit_primary_model(
         return PrimaryFit(status=STATUS_CONVERGENCE_FAILURE, n_used=n, n_parameters=p,
                           message="non-positive residual variance")
 
-    # Reconstruct all five subject-specific effects. Interaction coefficients are never read as
-    # the effects themselves.
+    # Reconstruct all five subject-specific effects from the interaction coefficients
     interaction_columns = {
         subject_position: treatment_column + 1 + offset
         for offset, subject_position in enumerate(interaction_subjects)

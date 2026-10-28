@@ -39,8 +39,7 @@ def _inverse_logit(values: np.ndarray) -> np.ndarray:
 def linear_predictor(
     scenario: MissingnessScenario, treatment: np.ndarray, baseline_latent: np.ndarray
 ) -> np.ndarray:
-    # Observation propensity depends only on variables the real analysis observes,
-    # which is what the MAR assumption in methodology section 17.2 requires.
+    # Observation propensity uses only observed variables, as MAR in section 17.2 requires
     return scenario.treatment_slope * treatment + scenario.baseline_slope * baseline_latent
 
 
@@ -74,9 +73,7 @@ def apply_missingness(
     baseline_latent: np.ndarray,
     rng: np.random.Generator,
 ) -> MissingnessOutcome:
-    # Returns the observation indicator for the posttest. Students who are not observed have no
-    # primary outcome row, matching methodology section 17.2. The estimand weights are computed
-    # from randomized counts elsewhere and are deliberately unaffected by this step.
+    # Posttest observation indicator, methodology section 17.2
     n = treatment.size
 
     if scenario.mechanism == MECHANISM_NONE:

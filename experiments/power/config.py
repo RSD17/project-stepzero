@@ -20,8 +20,7 @@ DEFAULT_CONFIG_PATH = (
     Path(__file__).resolve().parent.parent.parent / "data" / "power" / "power_config_v0_provisional.json"
 )
 
-# Parameter provenance labels, methodology section 14.3 requires ICC and tutor variance to be
-# pilot-informed before final use.
+# Methodology 14.3 requires ICC and tutor variance to be pilot-informed before final use
 STATUS_PROVISIONAL = "PROVISIONAL_POWER_DEVELOPMENT"
 STATUS_PILOT_INFORMED = "PILOT_INFORMED"
 VALID_STATUSES = (STATUS_PROVISIONAL, STATUS_PILOT_INFORMED)

@@ -1,19 +1,4 @@
-"""Trajectory-stage sensitivity of the frozen Balanced Step Zero recommendations.
-
-Research question
------------------
-Is the fragility observed for `intermediate_student` at its starting state concentrated at
-particular stages of the simulated trajectory, or does it persist across mastery states and
-personas?
-
-This is Extension A of the completed structural-sensitivity experiment. Perturbation definitions,
-metric definitions and integrity safeguards are IMPORTED from that script rather than restated, so
-the two experiments are identical by construction on everything except the learner state.
-
-Perturbations are deterministic structured probes of one frozen graph. They are NOT independent
-observations and NOT sampled students, so no significance test, confidence interval or p-value is
-computed anywhere in this script. All results are descriptive.
-"""
+"""Trajectory-stage sensitivity of the frozen recommendations. Descriptive probes, no inference."""
 
 import copy
 import csv
@@ -68,11 +53,7 @@ def mastery_trajectory(graph, student, recommender):
 
 
 def state_after_sessions(graph, student, recommender, sessions):
-    """Replay the deterministic simulator for exactly `sessions` sessions and return the student.
-
-    The simulator seeds its own RNG at the start of `run`, so a run truncated at k sessions
-    reproduces the first k sessions of a longer run exactly. Verified in `validation`.
-    """
+    """Replay the deterministic simulator for exactly `sessions` sessions and return the student."""
     if sessions == 0:
         return copy.deepcopy(student)
     sim = LearningSimulator(recommender=recommender, learner_model=AverageLearnerModel(),
@@ -99,7 +80,7 @@ def main():
 
     validation = {}
 
-    # ---------------- trajectories and checkpoint derivation ----------------
+    # Trajectories and checkpoint derivation
     traj = {}
     for pid in sorted(profiles):
         start_mastered = len(profiles[pid].completed_concepts())
@@ -136,7 +117,7 @@ def main():
     validation["distinct_states"] = len(distinct_states)
     print(f"\n  checkpoints: {len(checkpoints)} over {len(distinct_states)} distinct states")
 
-    # ---------------- state reconstruction, with a determinism check ----------------
+    # State reconstruction, with a determinism check
     states = {}
     prefix_ok = True
     for pid, sessions in distinct_states:
@@ -159,7 +140,7 @@ def main():
     print(f"  truncated run reproduces the prefix of a longer run: {prefix_ok}")
     del short, long_res, short_res
 
-    # ---------------- perturbations, identical to the completed experiment ----------------
+    # Perturbations, identical to the completed experiment
     perts, rejected = build_perturbations(graph)
     labels = [p.label for p in perts]
     validation["no_duplicate_perturbations"] = len(labels) == len(set(labels))
@@ -174,7 +155,7 @@ def main():
     edge_btw = nx.edge_betweenness_centrality(graph)
     median_btw = sorted(edge_btw.values())[len(edge_btw) // 2]
 
-    # ---------------- evaluation ----------------
+    # Evaluation
     baselines = {}
     diagnostics = {}
     for key, info in states.items():

@@ -1,0 +1,24 @@
+{
+  "generated": "2026-10-28",
+  "subject_data_fingerprint": "82a75c095c62db00",
+  "graph_fingerprint": "f0ca28ea5d26f944",
+  "matches_experiment_outputs": true,
+  "per_file_sha256": {
+    "mathematics.json": "0a51789de30a262f",
+    "physics.json": "7cb171c15a1c2788",
+    "chemistry.json": "41fb18b152e5988b",
+    "biology.json": "67bdac212f4a72d4",
+    "computer_science.json": "4498640d71365fb2"
+  },
+  "concepts": 94,
+  "edges": 119,
+  "cross_subject_edges": 16,
+  "priority_source": "experiments/results/trajectory_sensitivity.json",
+  "files": [
+    "review_mathematics.md",
+    "review_physics.md",
+    "review_chemistry.md",
+    "review_biology.md",
+    "review_computer_science.md"
+  ]
+}

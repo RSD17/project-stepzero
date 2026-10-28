@@ -12,12 +12,10 @@ from experiments.power.config import SUBJECT_IDS, InferenceParams
 from experiments.power.dgp import StudyData
 from experiments.power.estimand import SubjectWeights
 
-# Percentile intervals are named in methodology 15.3 by decision D2. BCa, basic and studentized
-# intervals are not implemented and were explicitly excluded by decision D5.
+# Percentile intervals, named in methodology 15.3 by decision D2
 INTERVAL_METHOD_PERCENTILE = "percentile"
 
-# Decision D8 fixes the real study's resample count. The engine's own validation deliberately
-# runs a far smaller B across many replicates, so this value is not a default anywhere here.
+# Decision D8 fixes the real study's resample count, not the engine's validation default
 STUDY_RESAMPLES = 10000
 
 
@@ -52,9 +50,7 @@ class BootstrapResult:
 def _resample_indices(
     study: StudyData, rng: np.random.Generator
 ) -> tuple[np.ndarray, np.ndarray]:
-    # Resample tutor groups with replacement separately within each subject and keep every
-    # student in a selected group, methodology section 15.3. Each drawn copy of a group becomes a
-    # distinct cluster so the fixed-effect structure stays correct.
+    # Resample tutor groups with replacement within subject; each drawn copy is a new cluster
     rows: list[np.ndarray] = []
     new_tutor: list[np.ndarray] = []
     next_id = 0
@@ -81,8 +77,7 @@ def bootstrap_student_weighted_effect(
     n_resamples: int,
     rng: np.random.Generator,
 ) -> BootstrapResult:
-    # The original randomized subject weights stay fixed across resamples because they define the
-    # estimand, methodology section 15.3 step 3.
+    # Original randomized weights stay fixed across resamples because they define the estimand
     estimates: list[float] = []
 
     for _ in range(n_resamples):
@@ -119,10 +114,7 @@ def bootstrap_student_weighted_effect(
     low = float(np.quantile(values, alpha / 2.0))
     high = float(np.quantile(values, 1.0 - alpha / 2.0))
 
-    # Simulation diagnostic only. Decision D6 makes the bootstrap an interval-only sensitivity
-    # analysis in methodology 15.3, so the study produces no bootstrap p-value and no bootstrap
-    # decision rule. This value exists to compare rejection rates between inference methods in
-    # the power engine and must not enter any study-analysis path.
+    # Simulation diagnostic only. Decision D6 makes the study bootstrap interval-only
     p_one_sided = float((values <= 0.0).mean())
 
     return BootstrapResult(

@@ -1,18 +1,4 @@
-"""Structural sensitivity of the frozen Balanced Step Zero recommendations.
-
-Research question
------------------
-How sensitive are the frozen recommendations to single-edge deletions and valid edge reversals,
-and is any observed stability better explained by graph structure (H2) or by the policy's
-effective use of graph-dependent heuristics (H3)?
-
-Scope is the approved minimal core: the frozen five-subject graph, the frozen Balanced Step Zero
-weights, all five synthetic personas at their starting state, all single-edge deletions, and all
-cycle-free edge reversals. No extensions.
-
-This script reads frozen data and calls the production recommender. It reimplements no scoring
-logic and modifies nothing.
-"""
+"""Structural sensitivity of the frozen Balanced Step Zero recommendations to edge perturbations."""
 
 import csv
 import hashlib
@@ -79,13 +65,7 @@ def ranking_of(recommender, graph, student):
 
 
 def kendall_tau_union(base_order, pert_order, k=TOP_K_RANK):
-    """Kendall tau-b over the union of the two top-k lists.
-
-    Ties and incomplete rankings are handled explicitly: a concept present in one top-k but not
-    the other is assigned a single tied rank one step worse than the deepest observed rank in the
-    list where it is missing. This keeps the comparison well defined when perturbation changes the
-    candidate set, and the tie structure is what tau-b is designed for.
-    """
+    """Kendall tau-b over the union of the two top-k lists, with missing entries given a tied rank."""
     b_top, p_top = base_order[:k], pert_order[:k]
     union = list(dict.fromkeys(b_top + p_top))
     if len(union) < 2:
@@ -136,12 +116,7 @@ def apply_perturbation(graph, pert):
 
 
 def heuristic_diagnostics(recs):
-    """Level and discriminative power of each heuristic on one ranking.
-
-    `mean_contribution` is the average weighted contribution to the score. `sd_contribution` is
-    its spread across candidates, which is what can change the ORDER. A heuristic with a large
-    but near-constant contribution shifts every score equally and cannot reorder anything.
-    """
+    """Level and discriminative power of each heuristic; only sd_contribution can change the order."""
     if not recs:
         return {}
     names = list(recs[0].heuristic_contributions)
@@ -176,7 +151,7 @@ def main():
 
     validation = {}
 
-    # --- baseline reproducibility -------------------------------------------------
+    # Baseline reproducibility
     baselines = {}
     repeats_identical = True
     for pid in sorted(profiles):
@@ -196,7 +171,7 @@ def main():
         print(f"    {pid:<22} candidates {len(baselines[pid]['order']):>3}  "
               f"top-1 {baselines[pid]['order'][0] if baselines[pid]['order'] else 'NONE'}")
 
-    # --- perturbation set ---------------------------------------------------------
+    # Perturbation set
     perts, rejected = build_perturbations(graph)
     labels = [p.label for p in perts]
     validation["no_duplicate_perturbations"] = len(labels) == len(set(labels))
@@ -208,7 +183,7 @@ def main():
     for r in rejected[:5]:
         print(f"    rejected {r['edge']}: {r['reason']}")
 
-    # --- edge stratification ------------------------------------------------------
+    # Edge stratification
     undirected = graph.to_undirected()
     bridges = {tuple(sorted(e)) for e in nx.bridges(undirected)}
     edge_btw = nx.edge_betweenness_centrality(graph)
@@ -218,7 +193,7 @@ def main():
     print(f"  bridges (removal disconnects the undirected graph): {len(bridges)} of "
           f"{graph.number_of_edges()}")
 
-    # --- run ----------------------------------------------------------------------
+    # Run
     rows = []
     cycles_introduced = 0
     missing_concepts = 0
@@ -263,10 +238,10 @@ def main():
     validation["frozen_subject_data_unchanged"] = data_fp_before == data_fp_after
     validation["graph_fingerprint_unchanged"] = graph_fingerprint(graph) == gfp
 
-    # --- heuristic diagnostics on the baseline ------------------------------------
+    # Heuristic diagnostics on the baseline
     diagnostics = {pid: heuristic_diagnostics(baselines[pid]["recs"]) for pid in sorted(profiles)}
 
-    # --- summaries ----------------------------------------------------------------
+    # Summaries
     def summarize(subset):
         if not subset:
             return None

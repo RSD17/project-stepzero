@@ -12,11 +12,8 @@ COVERAGE_TOLERANCE = 0.02
 MCSE_TOLERANCE = 0.02
 BIAS_TOLERANCE = 0.02
 
-# Estimating the control-arm SD inflates the sampling variance of the standardized contrast by
-# approximately v/(v-2), where v is control n per subject minus 1. The delta-method SE does not
-# capture this, so analytic inference is anticonservative when the control arm is small. Measured
-# at 10,000 replicates: control n 12 gave two-sided Type I error 0.060 and coverage 0.940, while
-# control n 32 and above stayed within Monte Carlo error of nominal.
+# Estimating the control-arm SD inflates contrast variance by about v/(v-2); the delta SE omits it
+# At control n 12 this gave Type I error 0.060 and coverage 0.940; n 32 and above were nominal
 MIN_CONTROL_ARM_PER_SUBJECT = 30
 
 

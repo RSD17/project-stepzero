@@ -97,9 +97,7 @@ def generate_students(structure: StudyStructure) -> tuple[np.ndarray, np.ndarray
 def generate_baseline(
     config: PowerConfig, subject_index: np.ndarray, rng: np.random.Generator
 ) -> tuple[np.ndarray, np.ndarray]:
-    # Baseline mastery is the pretest percentage on the parallel form, methodology sections 10.3 and 13.1.
-    # A unit-variance latent draw is kept for the data-generating process so the variance
-    # decomposition in VarianceParams holds exactly.
+    # Baseline mastery is the pretest percentage, methodology sections 10.3 and 13.1
     latent = rng.standard_normal(subject_index.size)
     pct = np.empty(subject_index.size, dtype=float)
     for index, subject in enumerate(SUBJECT_IDS):
@@ -120,8 +118,7 @@ def generate_outcomes(
     treatment: np.ndarray,
     rng: np.random.Generator,
 ) -> np.ndarray:
-    # Latent outcome with control-arm total variance fixed at 1, so treatment effects are
-    # already expressed in control-arm SD units.
+    # Latent outcome with control-arm variance fixed at 1, so effects are in control SD units
     n_groups = int(tutor_index.max()) + 1
     tutor_effect = rng.normal(0.0, np.sqrt(variance.tutor_variance), size=n_groups) if variance.tutor_variance > 0 else np.zeros(n_groups)
     residual = rng.normal(0.0, np.sqrt(variance.residual_variance), size=subject_index.size)

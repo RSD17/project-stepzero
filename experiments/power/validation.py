@@ -87,8 +87,7 @@ class BootstrapComparison:
 
 
 def _validation_replicate(args):
-    # One replicate: generate, apply missingness, then analyse the same dataset twice, once with
-    # delta-method inference and once with the tutor-group bootstrap of methodology section 15.3.
+    # One replicate analysed twice: delta-method inference and the 15.3 tutor-group bootstrap
     config, key, index, resamples = args
     variance = config.variance_params(key.variance_id)
     effects = config.effect_scenario(key.effect_id)
@@ -152,9 +151,7 @@ def run_bootstrap_validation(
     resamples: int = 200,
     workers: int = 1,
 ) -> BootstrapComparison:
-    # Measures how far the primary analytic inference of methodology 15.2 and the tutor-group
-    # bootstrap sensitivity analysis of 15.3 diverge on identical simulated datasets. This
-    # comparison is the evidence behind decision D5.
+    # Divergence between the primary analytic inference and the bootstrap, the evidence for D5
     indices = list(range(replications))
     if workers <= 1:
         results = _validation_chunk((config, key, indices, resamples))
@@ -195,8 +192,7 @@ def run_bootstrap_validation(
     def binomial_mcse(rate):
         return math.sqrt(max(rate * (1.0 - rate), 0.0) / n)
 
-    # Analytic and bootstrap decisions are made on identical datasets, so the paired
-    # difference is far more precise than comparing two independent rates.
+    # Paired on identical datasets, so the difference is more precise than independent rates
     rejection_pairs = np.array(
         [float(r["analytic_reject"]) - float(r["bootstrap_reject"]) for r in successes]
     )
@@ -294,8 +290,7 @@ def format_bootstrap_comparison(comparisons: list[BootstrapComparison]) -> str:
     return "\n".join(lines)
 
 
-# The deliberately selected validation conditions, one per case where an analytic approximation is
-# most likely to fail. Kept here rather than in a driver script so the reported run is reproducible.
+# Validation conditions, one per case where an analytic approximation is most likely to fail
 VALIDATION_CONDITIONS = (
     ("smallest design", 4, 6, None, "no_attrition"),
     ("small control arm", 6, 8, None, "no_attrition"),
@@ -309,8 +304,7 @@ VALIDATION_EFFECTS = ("null", "homog_030")
 
 
 def validation_suite_keys(config: PowerConfig) -> list[tuple[str, ScenarioKey]]:
-    # Each condition is run under the complete null and under a homogeneous 0.30 effect so that
-    # Type I error and power are both measured on the same design.
+    # Each condition runs under the null and a homogeneous 0.30 effect, both on one design
     pairs = []
     for label, groups, students, variance_id, missingness_id in VALIDATION_CONDITIONS:
         for effect_id in VALIDATION_EFFECTS:
