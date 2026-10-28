@@ -1,0 +1,341 @@
+{
+  "config_version": "v0-provisional-2026-09-29",
+  "status": "PROVISIONAL_POWER_DEVELOPMENT",
+  "methodology_version": "research-methodology.docx 2026-09-25",
+  "description": "Provisional power-analysis configuration for Project Step Zero. Variance, ICC, baseline and missingness parameters are placeholders for engine development and are NOT empirically justified. They must be replaced with pilot-informed values before the final recruitment target is locked. Methodology section 14.3 requires ICC and tutor-group variance to be pilot-informed.",
+  "subjects": [
+    {
+      "subject_id": "mathematics",
+      "baseline_mean_pct": 45.0,
+      "baseline_sd_pct": 15.0,
+      "control_mean_pct": 58.0,
+      "control_sd_pct": 16.0
+    },
+    {
+      "subject_id": "physics",
+      "baseline_mean_pct": 42.0,
+      "baseline_sd_pct": 16.0,
+      "control_mean_pct": 55.0,
+      "control_sd_pct": 17.0
+    },
+    {
+      "subject_id": "chemistry",
+      "baseline_mean_pct": 44.0,
+      "baseline_sd_pct": 15.0,
+      "control_mean_pct": 57.0,
+      "control_sd_pct": 16.0
+    },
+    {
+      "subject_id": "biology",
+      "baseline_mean_pct": 50.0,
+      "baseline_sd_pct": 14.0,
+      "control_mean_pct": 62.0,
+      "control_sd_pct": 15.0
+    },
+    {
+      "subject_id": "computer_science",
+      "baseline_mean_pct": 40.0,
+      "baseline_sd_pct": 17.0,
+      "control_mean_pct": 54.0,
+      "control_sd_pct": 18.0
+    }
+  ],
+  "groups_grid": [
+    4,
+    6,
+    8,
+    10,
+    12,
+    14
+  ],
+  "students_grid": [
+    6,
+    8,
+    10,
+    12,
+    14,
+    16
+  ],
+  "variance_reference": {
+    "variance_id": "icc_003",
+    "baseline_coefficient": 0.5,
+    "icc": 0.03,
+    "tutor_treatment_sd": 0.0,
+    "status": "PROVISIONAL_POWER_DEVELOPMENT"
+  },
+  "variance_grid": [
+    {
+      "variance_id": "icc_001",
+      "baseline_coefficient": 0.5,
+      "icc": 0.01,
+      "tutor_treatment_sd": 0.0,
+      "status": "PROVISIONAL_POWER_DEVELOPMENT"
+    },
+    {
+      "variance_id": "icc_003",
+      "baseline_coefficient": 0.5,
+      "icc": 0.03,
+      "tutor_treatment_sd": 0.0,
+      "status": "PROVISIONAL_POWER_DEVELOPMENT"
+    },
+    {
+      "variance_id": "icc_005",
+      "baseline_coefficient": 0.5,
+      "icc": 0.05,
+      "tutor_treatment_sd": 0.0,
+      "status": "PROVISIONAL_POWER_DEVELOPMENT"
+    },
+    {
+      "variance_id": "icc_010",
+      "baseline_coefficient": 0.5,
+      "icc": 0.1,
+      "tutor_treatment_sd": 0.0,
+      "status": "PROVISIONAL_POWER_DEVELOPMENT"
+    },
+    {
+      "variance_id": "icc_003_tutorhet_low",
+      "baseline_coefficient": 0.5,
+      "icc": 0.03,
+      "tutor_treatment_sd": 0.05,
+      "status": "PROVISIONAL_POWER_DEVELOPMENT"
+    },
+    {
+      "variance_id": "icc_003_tutorhet_mod",
+      "baseline_coefficient": 0.5,
+      "icc": 0.03,
+      "tutor_treatment_sd": 0.1,
+      "status": "PROVISIONAL_POWER_DEVELOPMENT"
+    },
+    {
+      "variance_id": "icc_003_tutorhet_high",
+      "baseline_coefficient": 0.5,
+      "icc": 0.03,
+      "tutor_treatment_sd": 0.2,
+      "status": "PROVISIONAL_POWER_DEVELOPMENT"
+    }
+  ],
+  "effect_scenarios": [
+    {
+      "scenario_id": "null",
+      "label": "Complete null",
+      "effects_by_subject": {
+        "mathematics": 0.0,
+        "physics": 0.0,
+        "chemistry": 0.0,
+        "biology": 0.0,
+        "computer_science": 0.0
+      },
+      "tier": "CONFIRMATORY_PLANNING"
+    },
+    {
+      "scenario_id": "homog_020",
+      "label": "Homogeneous 0.20",
+      "effects_by_subject": {
+        "mathematics": 0.2,
+        "physics": 0.2,
+        "chemistry": 0.2,
+        "biology": 0.2,
+        "computer_science": 0.2
+      },
+      "tier": "CONFIRMATORY_PLANNING"
+    },
+    {
+      "scenario_id": "homog_030",
+      "label": "Homogeneous 0.30 planning benchmark",
+      "effects_by_subject": {
+        "mathematics": 0.3,
+        "physics": 0.3,
+        "chemistry": 0.3,
+        "biology": 0.3,
+        "computer_science": 0.3
+      },
+      "tier": "CONFIRMATORY_PLANNING"
+    },
+    {
+      "scenario_id": "homog_040",
+      "label": "Homogeneous 0.40",
+      "effects_by_subject": {
+        "mathematics": 0.4,
+        "physics": 0.4,
+        "chemistry": 0.4,
+        "biology": 0.4,
+        "computer_science": 0.4
+      },
+      "tier": "CONFIRMATORY_PLANNING"
+    },
+    {
+      "scenario_id": "het_moderate",
+      "label": "Moderate subject heterogeneity, mean 0.30",
+      "effects_by_subject": {
+        "mathematics": 0.2,
+        "physics": 0.25,
+        "chemistry": 0.3,
+        "biology": 0.35,
+        "computer_science": 0.4
+      },
+      "tier": "SENSITIVITY"
+    },
+    {
+      "scenario_id": "het_strong",
+      "label": "Strong subject heterogeneity, mean 0.30",
+      "effects_by_subject": {
+        "mathematics": 0.1,
+        "physics": 0.2,
+        "chemistry": 0.3,
+        "biology": 0.4,
+        "computer_science": 0.5
+      },
+      "tier": "SENSITIVITY"
+    },
+    {
+      "scenario_id": "het_stress",
+      "label": "Stress test with one null subject, mean 0.30",
+      "effects_by_subject": {
+        "mathematics": 0.0,
+        "physics": 0.15,
+        "chemistry": 0.3,
+        "biology": 0.45,
+        "computer_science": 0.6
+      },
+      "tier": "STRESS_TEST"
+    }
+  ],
+  "missingness_scenarios": [
+    {
+      "scenario_id": "no_attrition",
+      "label": "Complete data",
+      "mechanism": "none",
+      "target_attrition": 0.0,
+      "treatment_slope": 0.0,
+      "baseline_slope": 0.0,
+      "tier": "CONFIRMATORY_PLANNING"
+    },
+    {
+      "scenario_id": "mcar_10",
+      "label": "MCAR 10 percent, development only",
+      "mechanism": "mcar",
+      "target_attrition": 0.1,
+      "treatment_slope": 0.0,
+      "baseline_slope": 0.0,
+      "tier": "SENSITIVITY"
+    },
+    {
+      "scenario_id": "mcar_20",
+      "label": "MCAR 20 percent, development only",
+      "mechanism": "mcar",
+      "target_attrition": 0.2,
+      "treatment_slope": 0.0,
+      "baseline_slope": 0.0,
+      "tier": "SENSITIVITY"
+    },
+    {
+      "scenario_id": "mcar_30",
+      "label": "MCAR 30 percent, development only",
+      "mechanism": "mcar",
+      "target_attrition": 0.3,
+      "treatment_slope": 0.0,
+      "baseline_slope": 0.0,
+      "tier": "SENSITIVITY"
+    },
+    {
+      "scenario_id": "mar_10",
+      "label": "MAR 10 percent, lower baseline more missing",
+      "mechanism": "mar",
+      "target_attrition": 0.1,
+      "treatment_slope": 0.0,
+      "baseline_slope": 0.4,
+      "tier": "SENSITIVITY"
+    },
+    {
+      "scenario_id": "mar_20",
+      "label": "MAR 20 percent, lower baseline more missing",
+      "mechanism": "mar",
+      "target_attrition": 0.2,
+      "treatment_slope": 0.0,
+      "baseline_slope": 0.4,
+      "tier": "SENSITIVITY"
+    },
+    {
+      "scenario_id": "mar_30",
+      "label": "MAR 30 percent, lower baseline more missing",
+      "mechanism": "mar",
+      "target_attrition": 0.3,
+      "treatment_slope": 0.0,
+      "baseline_slope": 0.4,
+      "tier": "SENSITIVITY"
+    },
+    {
+      "scenario_id": "mar_20_arm",
+      "label": "MAR 20 percent with mild arm differential",
+      "mechanism": "mar",
+      "target_attrition": 0.2,
+      "treatment_slope": 0.25,
+      "baseline_slope": 0.4,
+      "tier": "STRESS_TEST"
+    }
+  ],
+  "recruitment_scenarios": [
+    {
+      "scenario_id": "balanced",
+      "label": "Equal recruitment across subjects",
+      "group_multipliers": {
+        "mathematics": 1.0,
+        "physics": 1.0,
+        "chemistry": 1.0,
+        "biology": 1.0,
+        "computer_science": 1.0
+      },
+      "tier": "CONFIRMATORY_PLANNING"
+    },
+    {
+      "scenario_id": "mild_imbalance",
+      "label": "Mild recruitment imbalance",
+      "group_multipliers": {
+        "mathematics": 1.0,
+        "physics": 0.75,
+        "chemistry": 1.0,
+        "biology": 1.25,
+        "computer_science": 1.0
+      },
+      "tier": "SENSITIVITY"
+    },
+    {
+      "scenario_id": "strong_imbalance",
+      "label": "Strong recruitment imbalance",
+      "group_multipliers": {
+        "mathematics": 1.5,
+        "physics": 0.5,
+        "chemistry": 1.0,
+        "biology": 1.5,
+        "computer_science": 0.5
+      },
+      "tier": "STRESS_TEST"
+    }
+  ],
+  "inference": {
+    "alpha": 0.05,
+    "primary_sidedness": "one_sided",
+    "report_both_sidedness": true
+  },
+  "replications": 2000,
+  "master_seed": 20260929,
+  "clip_percentage": true,
+  "reference_missingness_id": "no_attrition",
+  "reference_recruitment_id": "balanced",
+  "notes": [
+    "Resolved decision D1: one-sided alpha 0.05 is the primary confirmatory convention because H1 is directional. Two-sided is reported alongside as the section 14.1 planning benchmark.",
+    "Resolved decision D3: the design grid is the 36-cell brief grid, superseding methodology section 14.3. Recorded as a dated amendment.",
+    "Resolved decision D4: scipy provides t-distribution inference.",
+    "Resolved decision D5: the analytic delta-method procedure of methodology section 15.2 is the primary uncertainty analysis and the confirmatory test for the primary standardized outcome. The tutor-group percentile bootstrap of section 15.3 is retained in full as the pre-specified sensitivity analysis. Basis: the bootstrap validation of 2026-09-29 measured bootstrap percentile coverage at 0.8875 to 0.9550 against analytic 0.9225 to 0.9725, and bootstrap one-sided Type I error above nominal in all six null conditions. Recorded as a pre-freeze specification decision in methodology section 15.3.1, not a protocol deviation.",
+    "Resolved decision D6: the tutor-group bootstrap of methodology section 15.3 is an interval-only sensitivity analysis. It produces no study hypothesis test and no confirmatory p-value. The p_one_sided field on BootstrapResult is retained as a simulation diagnostic for the method comparison only and is outside the study-analysis path.",
+    "Resolved decision D7: the primary confirmatory decision is the one-sided test of H1: tau_student > 0 at alpha 0.05. A two-sided 95 percent interval is reported descriptively and is explicitly not the decision rule, and the one-sided 95 percent lower bound dual to the test is reported alongside it. Alpha and sidedness in the inference block are unchanged.",
+    "Resolved decision D8: the real study fixes B = 10,000 bootstrap resamples with an archived resampling seed, recorded as STUDY_RESAMPLES in experiments/power/bootstrap.py. The engine's validation keeps B = 400, which is a development setting and not a protocol value.",
+    "Resolved decision D9: the finite-control-arm standardization bias and variance penalty are documented as estimator limitations in methodology 11.1 and the section 22 assumptions table and are not corrected. The bias is proportional to the true effect and is zero under the null, so the confirmatory test's size is unaffected. SE_OPTIMISTIC is preserved as implemented.",
+    "PROVISIONAL: baseline_coefficient 0.50 implies a latent pretest-posttest correlation near 0.5. Not pilot-verified.",
+    "PROVISIONAL: ICC grid 0.01 to 0.10. Methodology section 14.3 requires pilot-informed values.",
+    "PROVISIONAL: MAR baseline_slope 0.40 makes lower-baseline students more likely to miss the posttest. Not pilot-verified.",
+    "MCAR scenarios are development and debugging aids, not a claim about the expected mechanism.",
+    "PROVISIONAL: subject baseline and control-arm percentage parameters encode only the structural claim that subjects need not share a scale.",
+    "methodology_version is deliberately held at the 2026-09-25 revision although the methodology was amended on 2026-09-30 for D5. methodology_version is inside the hashed scientific payload, and the D5 amendment changes no hashed parameter: subjects, grids, variance, effects, missingness, recruitment, alpha, sidedness, replications and seed are all untouched. Bumping it would change the configuration hash and orphan the completed primary surface, imbalance surface and bootstrap validation without altering a single simulated value. Revisit when a methodology change actually moves a hashed parameter, such as pilot-informed ICC values."
+  ]
+}
